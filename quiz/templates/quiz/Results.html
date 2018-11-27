@@ -8,11 +8,11 @@
 {% block content %}
 
     <p>
-        You answered {{ questions_correct }} out of {{ Constants.num_rounds }}
-        questions correctly.
+        You answered {{ questions_correct }} questions correctly out of {{ questions_attempted }}
+        questions attempted.
     </p>
 
-    <table class="table">
+    <!-- <table class="table">
         <tr>
             <th>Question</th>
             <th>Your answer</th>
@@ -27,10 +27,8 @@
                 <td>{{ p.is_correct }}</td>
             </tr>
         {% endfor %}
-    </table>
+    </table> -->
 
 
     {% next_button %}
 {% endblock %}
-
-

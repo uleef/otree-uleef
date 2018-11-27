@@ -3,31 +3,33 @@ from otree.api import (
     Currency as c, currency_range
 )
 import csv
+import random
 
 author = 'Your name here'
-
-doc = """
-A quiz app that reads its questions from a spreadsheet
-(see quiz.csv in this directory).
-There is 1 question per page; the number of pages in the game
-is determined by the number of questions in the CSV.
-See the comment below about how to randomize the order of pages.
-"""
 
 
 class Constants(BaseConstants):
     name_in_url = 'quiz'
     players_per_group = None
 
-    with open('quiz/quiz.csv') as questions_file:
+    with open('quiz/quiz1.csv') as questions_file:
         questions = list(csv.DictReader(questions_file))
 
     num_rounds = len(questions)
+    with open('quiz/nametag.csv') as n_file:
+        nametag=[]
+        n_reader=csv.reader(n_file)
+        for row in n_reader:
+            nametag.append(row[0])
+
+        nametag=nametag[1:]
+    # print(nametag)
 
 
 class Subsession(BaseSubsession):
     def creating_session(self):
         if self.round_number == 1:
+
             self.session.vars['questions'] = Constants.questions.copy()
             ## ALTERNATIVE DESIGN:
             ## to randomize the order of the questions, you could instead do:
@@ -45,6 +47,7 @@ class Subsession(BaseSubsession):
             p.question_id = int(question_data['id'])
             p.question = question_data['question']
             p.solution = question_data['solution']
+            #print(p.question_id,p.question,p.solution)
 
 
 class Group(BaseGroup):
@@ -53,13 +56,20 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
     question_id = models.IntegerField()
+    name=models.StringField()
     question = models.StringField()
     solution = models.StringField()
-    submitted_answer = models.StringField(widget=widgets.RadioSelect)
+    nametag = models.StringField(
+        choices=Constants.nametag
+    )
+    submitted_answer = models.IntegerField(min=0)#models.StringField(widget=widgets.RadioSelect)
     is_correct = models.BooleanField()
+    attempted = models.BooleanField()
 
     def current_question(self):
         return self.session.vars['questions'][self.round_number - 1]
 
     def check_correct(self):
-        self.is_correct = (self.submitted_answer == self.solution)
+        self.is_correct = (str(self.submitted_answer) == self.solution)
+        self.attempted = True
+        print(Constants.nametag)

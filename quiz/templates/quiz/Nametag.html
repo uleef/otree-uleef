@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Question Please choose a nametag:
+{% endblock %}
+
+{% block content %}
+
+    {% formfield player.nametag %}
+
+    {% next_button %}
+
+{% endblock %}
