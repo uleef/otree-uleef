@@ -1,6 +1,6 @@
 # oTree
 
-oTree is a Python framework that lets you build:
+ULEEF oTree is a Python framework that lets you build:
 
 - Multiplayer strategy games, like the prisoner's dilemma, public goods game, and auctions
 - Controlled behavioral experiments in economics, psychology, and related fields
