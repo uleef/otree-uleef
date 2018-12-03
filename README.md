@@ -1,6 +1,5 @@
 # oTree
-
-ULEEF oTree is a Python framework that lets you build:
+oTree is a Python framework that lets you build:
 
 - Multiplayer strategy games, like the prisoner's dilemma, public goods game, and auctions
 - Controlled behavioral experiments in economics, psychology, and related fields
@@ -130,7 +129,7 @@ page_sequence = [Introduction,
 
 ### tests.py (optional)
 
-Test bots for multiplayer games run in parallel, 
+Test bots for multiplayer games run in parallel,
 and can run either from the command line,
 or in the browser, which you can try [here](http://otree-demo.herokuapp.com/demo/matching_pennies_bots/).
 
@@ -174,7 +173,7 @@ class PlayerBot(Bot):
 See docs on [bots](http://otree.readthedocs.io/en/latest/bots.html).
 
 
-## Features 
+## Features
 
 - Easy-to-use admin interface for launching games & surveys, managing participants, monitoring data, etc.
 - Simple yet extensive API
