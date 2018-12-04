@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+    <p>Your name is {{ player.name }} and your age is {{ player.age }}.</p>
+    <p>You list your gender as {{ player.gender }} and your political affiliation is {{ player.politics }}.</p>
+    <p>Your screen name is {{ player.moniker }}.</p>
+
+
+    {% next_button %}
+{% endblock %}

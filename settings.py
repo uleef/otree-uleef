@@ -13,6 +13,11 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
+        'name': 'my_simple_survey',
+        'num_demo_participants': 3,
+        'app_sequence': ['my_simple_survey'],
+    },
+    {
         'name': 'public_goods',
         'display_name': "Public Goods",
         'num_demo_participants': 3,
@@ -33,6 +38,12 @@ SESSION_CONFIGS = [
         'name': 'quiz',
         'num_demo_participants': 1,
         'app_sequence': ['quiz'],
+    },
+    {
+        'name': 'bargaining',
+        'display_name': "Bargaining Game",
+        'num_demo_participants': 2,
+        'app_sequence': ['bargaining', 'payment_info'],
     },
 ]
 # see the end of this file for the inactive session configs
@@ -81,7 +92,7 @@ ADMIN_PASSWORD = 'password' #environ.get('OTREE_ADMIN_PASSWORD')
 DEBUG = (environ.get('OTREE_PRODUCTION') in {None, '', '0'})
 
 DEMO_PAGE_INTRO_HTML = """
-Here are various games implemented with 
+Here are various games implemented with
 oTree. These games are open
 source, and you can modify them as you wish.
 """
