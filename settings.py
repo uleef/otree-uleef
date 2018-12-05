@@ -13,37 +13,12 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
-        'name': 'my_simple_survey',
-        'num_demo_participants': 3,
-        'app_sequence': ['my_simple_survey'],
-    },
-    {
-        'name': 'public_goods',
-        'display_name': "Public Goods",
-        'num_demo_participants': 3,
-        'app_sequence': ['public_goods', 'payment_info'],
-    },
-    {
-        'name': 'guess_two_thirds',
-        'display_name': "Guess 2/3 of the Average",
-        'num_demo_participants': 3,
-        'app_sequence': ['guess_two_thirds', 'payment_info'],
-    },
-    {
-        'name': 'survey',
-        'num_demo_participants': 1,
-        'app_sequence': ['survey', 'payment_info'],
-    },
-    {
-        'name': 'quiz',
-        'num_demo_participants': 1,
-        'app_sequence': ['quiz'],
-    },
-    {
-        'name': 'bargaining',
-        'display_name': "Bargaining Game",
-        'num_demo_participants': 2,
-        'app_sequence': ['bargaining', 'payment_info'],
+    'name': 'voting_game',
+    'display_name': "Voting Game",
+    'num_demo_participants': 3,
+    'app_sequence': [
+    'voting_game',
+    ],
     },
 ]
 # see the end of this file for the inactive session configs
@@ -230,3 +205,52 @@ INSTALLED_APPS = ['otree']
 ###     'num_demo_participants': 2,
 ###     'app_sequence': ['trust_simple'],
 ### },
+###    {
+###        'name': 'my_simple_survey',
+###        'num_demo_participants': 3,
+###        'app_sequence': ['my_simple_survey'],
+###    },
+###    {
+###        'name': 'public_goods',
+###        'display_name': "Public Goods",
+###        'num_demo_participants': 3,
+###        'app_sequence': ['public_goods', 'payment_info'],
+###    },
+###    {
+###        'name': 'guess_two_thirds',
+###        'display_name': "Guess 2/3 of the Average",
+###        'num_demo_participants': 3,
+###        'app_sequence': ['guess_two_thirds', 'payment_info'],
+###    },
+###    {
+###        'name': 'survey',
+###        'num_demo_participants': 1,
+###        'app_sequence': ['survey', 'payment_info'],
+###    },
+###    {
+###        'name': 'quiz',
+###        'num_demo_participants': 1,
+###        'app_sequence': ['quiz'],
+###    },
+###    {
+###        'name': 'bargaining',
+###        'display_name': "Bargaining Game",
+###        'num_demo_participants': 2,
+###        'app_sequence': ['bargaining', 'payment_info'],
+###    },
+###    {
+###    'name': 'my_matching_pennies',
+###    'display_name': "My Matching Pennies (tutorial version)",
+###    'num_demo_participants': 2,
+###    'app_sequence': [
+###    'my_matching_pennies',
+###    ],
+###    },
+###    {
+###    'name': 'matching_pennies',
+###    'display_name': "Matching Pennies",
+###    'num_demo_participants': 2,
+###    'app_sequence': [
+###    'matching_pennies',
+###    ],
+###    },

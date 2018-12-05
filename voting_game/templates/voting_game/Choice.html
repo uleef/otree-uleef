@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+
+    <table class="table">
+        <tr>
+            <th>Straw Poll: Number of Blue among the {{Constants.players_per_group}} votes</th>
+        </tr>
+            <tr>
+                <td>{{straw_vote}}</td>
+            </tr>
+    </table>
+    <h4>Vote</h4>
+    <p>
+        Here you cast your vote!
+
+    </p>
+  <p>
+    {% formfield player.ball_vote label="I vote:" %}
+
+    {% next_button %}
+
+{% endblock %}

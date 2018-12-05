@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Round {{ subsession.round_number }} of {{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+
+    <h4>Reporting of Drawn Ball</h4>
+
+    {% formfield player.ball_color label="The color of the ball I drew was:" %}
+    {% next_button %}
+    <h6>Round history</h6>
+    <table class="table">
+        <tr>
+            <th>Round</th>
+            <th>Payoff</th>
+        </tr>
+        {% for p in player_in_previous_rounds %}
+            <tr>
+                <td>{{ p.round_number }}</td>
+                <td>You received {{p.payoff}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p>
+
+
+
+{% endblock %}
