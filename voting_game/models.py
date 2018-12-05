@@ -18,9 +18,9 @@ class Constants(BaseConstants):
     nodecision=c(0) #the payoff if the group does not reach a decision
     wrongdecision=c(100) #the payoff if the group reaches a decision but it is the wrong one
     bluebias=c(50) #payoff for casting a particular vote ()
-    trueurn = [1, 0, 1, 0]
+    trueurn = [1, 1, 0, 0]
     Un=[1, 3] #Rounds in which the voting rule is Unanimity
-    Delib=[2, 4] #Rounds in which straw vote is also collected
+    Delib=[3, 4] #Rounds in which straw vote is also collected
 
     majority=(players_per_group-1)/2
 
@@ -30,7 +30,7 @@ class Subsession(BaseSubsession):
 
     def creating_session(self):
         self.group_randomly()
-        
+
 class Group(BaseGroup):
     total_blue=models.IntegerField()
     total_blue_straw=models.IntegerField()
