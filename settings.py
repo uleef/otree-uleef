@@ -15,7 +15,7 @@ SESSION_CONFIGS = [
     {
     'name': 'voting_game',
     'display_name': "Voting Game",
-    'num_demo_participants': 3,
+    'num_demo_participants': 5,
     'app_sequence': [
     'voting_game',
     ],
