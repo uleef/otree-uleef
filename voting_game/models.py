@@ -12,7 +12,7 @@ This is a voting game that is played in {{Constants.num_rounds}}.
 
 class Constants(BaseConstants):
     name_in_url = 'voting_game'
-    players_per_group = 3
+    players_per_group = 5
     num_rounds = 4
     rightdecision=c(500) #the payoff if the group reaches a decision and it is correct
     nodecision=c(0) #the payoff if the group does not reach a decision
