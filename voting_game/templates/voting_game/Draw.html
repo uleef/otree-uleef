@@ -7,7 +7,7 @@
 
 {% block content %}
 
-    <h4>Reporting of Drawn Ball</h4>
+    <h4>New Round: Reporting of Drawn Ball</h4>
 
     {% formfield player.ball_color label="The color of the ball I drew was:" %}
     {% next_button %}
@@ -15,12 +15,18 @@
     <table class="table">
         <tr>
             <th>Round</th>
-            <th>Payoff</th>
+            <th>Your Vote</th>
+            <th>Group Decision</th>
+            <th>Jar</th>
+            <th>Your Payoff</th>
         </tr>
         {% for p in player_in_previous_rounds %}
             <tr>
                 <td>{{ p.round_number }}</td>
-                <td>You received {{p.payoff}}</td>
+                <td> {{p.ball_vote}}</td>
+                <td> {{p.decision}}</td>
+                <td> {{p.jar}}</td>
+                <td> {{p.payoff}}</td>
             </tr>
         {% endfor %}
     </table>

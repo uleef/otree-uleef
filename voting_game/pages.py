@@ -33,9 +33,23 @@ class Choice(Page):
     form_model = 'player'
     form_fields = ['ball_vote']
     def vars_for_template(self):
-        return {
-            'straw_vote': self.group.total_blue_straw,
-        }
+        if self.round_number in Constants.Delib:
+            return {
+            'straw_message1': 'The result of the Straw Vote is',
+            'straw_vote1': self.group.total_blue_straw,
+            'straw_message2': 'Blue and',
+            'straw_vote2': self.group.total_green_straw,
+            'straw_message3': 'Green.',
+
+            }
+        else:
+            return {
+            'straw_message1': 'No',
+            'straw_vote1': 'straw',
+            'straw_message2': 'vote',
+            'straw_vote2': 'this round.',
+            'straw_message3': 'Proceed to voting.',
+            }
 
 
 
