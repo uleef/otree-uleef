@@ -20,13 +20,7 @@ SESSION_CONFIGS = [
     'voting_game',
     ],
     },
-    
-    {
-    'name': 'complex_math',
-    'display_name': "Math Game",
-    'num_demo_participants': 12,
-    'app_sequence': ['complex_math',],
-    },
+
 ]
 # see the end of this file for the inactive session configs
 
