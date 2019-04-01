@@ -23,9 +23,9 @@ SESSION_CONFIGS = [
 
     {
     'name': 'complex_math',
-    'display_name': "Complex Math Test",
+    'display_name': "Math Test",
     'num_demo_participants': 6,
-    'app_sequence': ['Math Game',],
+    'app_sequence': ['complex_math',],
     },
 
 ]
