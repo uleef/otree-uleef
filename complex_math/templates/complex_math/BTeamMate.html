@@ -1,0 +1,18 @@
+{% extends "global/Page.html" %}
+{% load otree  %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+        <p>
+            <h4>For the next round you will complete the task with {{ BteamMate }}</h4>
+        </p>
+
+        {% next_button %}<br><br><br>
+
+{% endblock %}
+
+

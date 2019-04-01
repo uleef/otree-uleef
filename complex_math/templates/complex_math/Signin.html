@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Sign In
+{% endblock %}
+
+{% block content %}
+
+{% load otree_tags staticfiles %}
+
+    {% formfield player.name %}
+
+      {% next_button %}<br><br><br>
+
+{% endblock %}

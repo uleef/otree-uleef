@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Team Selection
+{% endblock %}
+
+{% block content %}
+
+{% load otree_tags staticfiles %}
+
+<p class = "text-success">
+    </p>
+
+    <div class="panel panel-success">
+
+        <div class="panel-heading">
+            <h4>Please select a participant to be a member of your team.</h4>
+        </div>
+    </div>
+
+    {% formfield player.sentNames %}
+
+
+    {% next_button %}<br><br><br>
+
+
+{% endblock %}

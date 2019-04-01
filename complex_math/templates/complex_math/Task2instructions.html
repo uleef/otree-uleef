@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+
+{% load otree_tags staticfiles %}
+
+<p class = "text-success">
+    </p>
+
+    <div class="panel panel-success">
+
+        <div class="panel-heading">
+
+            <h4>In this task you scored {{ total_payoff  }}</h4>
+            <br><br>
+            <h4>Please select a name that will be used when your score is shared</h4>
+        </div>
+    </div>
+    </div>
+
+    {% formfield player.nametag %}
+
+      {% next_button %}<br><br><br>
+
+
+
+{% endblock %}
