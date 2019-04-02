@@ -200,6 +200,8 @@ class Player(BasePlayer):
     loc = 'complex_math/nametags.xlsx'
     nametagBook = xlrd.open_workbook(loc)
 
+    # nametagBook = models.CharField(initial='complex_math/nametags.xlsx')
+
     ## this variable is the nametag that the player selects. The nametag choices for this variable are determined during the game
     nametag = models.StringField()
 

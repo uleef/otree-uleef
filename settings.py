@@ -11,6 +11,8 @@ SESSION_CONFIG_DEFAULTS = {
     'doc': "",
 }
 
+SILENCED_SYSTEM_CHECKS = ["otree.E112","otree.E111"]
+
 SESSION_CONFIGS = [
     {
     'name': 'voting_game',
