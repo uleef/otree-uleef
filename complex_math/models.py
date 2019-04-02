@@ -232,18 +232,14 @@ class Player(BasePlayer):
     '''
     def score_task1(self):
         if self.solution == self.user_total:
-            self.is_correct = True
             self.task1payoff_score = 1
         else:
-            self.is_correct = False
             self.task1payoff_score = c(0)
 
 
 
     def score_task2(self):
         if self.solution == self.user_total:
-            self.is_correct = True
             self.task2payoff_score = 1
         else:
-            self.is_correct = False
             self.task2payoff_score = c(0)
