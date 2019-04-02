@@ -31,14 +31,15 @@ Signin page to get user name or whatever they choose to enter and set up session
 '''
 class Signin(Page):
 
-    ## delete old excel page before anything else happens
 
-    directoryPath = 'complex_math/Results'
-    fileList = os.listdir(directoryPath)
-    for fileName in fileList:
-        os.remove(directoryPath + "/" + fileName)
 
     def is_displayed(self):
+        ## delete old excel page before anything else happens
+
+        directoryPath = 'complex_math/Results'
+        fileList = os.listdir(directoryPath)
+        for fileName in fileList:
+            os.remove(directoryPath + "/" + fileName)
         return self.round_number ==1
 
     form_model='player'
