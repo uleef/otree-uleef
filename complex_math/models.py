@@ -6,6 +6,7 @@ from otree.api import (
 import pandas as pd
 import numpy as np
 import csv
+import random
 import xlrd
 
 import xlwt
@@ -32,7 +33,7 @@ class Constants(BaseConstants):
 
     name_in_url = 'complex_math_game'
     players_per_group = 6 ## players must be multiple of 3.
-    task_timer = 10
+    task_timer = 5
 
     ##Excel Styles
 
@@ -66,6 +67,10 @@ class Constants(BaseConstants):
     resultsBook = Workbook()
     resultsSheet = resultsBook.add_sheet('Results Sheet')
 
+    ##random numbers for payoffs
+    randomRound = random.randint(1,rounds,)
+    randomSelector = random.randint(1,selectors)*3
+    randomLocationAdjust = random.randint(0, 1)
 
     participantVarList = ['name','nametag','task1_payoff','task2_payoff']
 
