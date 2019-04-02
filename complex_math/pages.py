@@ -6,12 +6,11 @@ from . import models
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
+
 import os
 import collections
 import pandas as pd
 
-import xlwt
-from xlwt import Workbook
 
 ## INSTRUCTIONS FOR ROUND 2
     ## round 1 instructions include outline of the game (round 1 and round 2 instructions tell that this is round 2)
