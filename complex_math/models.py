@@ -232,14 +232,14 @@ class Player(BasePlayer):
     '''
     def score_task1(self):
         if self.solution == self.user_total:
-            self.task1payoff_score = 1
+            self.task1payoff_score = 1.0
         else:
-            self.task1payoff_score = c(0)
+            self.task1payoff_score = 0.0
 
 
 
     def score_task2(self):
         if self.solution == self.user_total:
-            self.task2payoff_score = 1
+            self.task2payoff_score = 1.0
         else:
-            self.task2payoff_score = c(0)
+            self.task2payoff_score = 0.0
