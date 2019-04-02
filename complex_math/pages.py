@@ -6,18 +6,18 @@ from . import models
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
-
 import os
 import collections
 import pandas as pd
+import random
 
+import xlwt
+from xlwt import Workbook
 
 ## INSTRUCTIONS FOR ROUND 2
     ## round 1 instructions include outline of the game (round 1 and round 2 instructions tell that this is round 2)
 ## set the task timer after instructions
 
-
-## lets see if this comment gets added
 
 author = 'Gus Stevens'
 
@@ -31,17 +31,14 @@ Signin page to get user name or whatever they choose to enter and set up session
 '''
 class Signin(Page):
 
+    ## delete old excel page before anything else happens
 
+    directoryPath = 'complex_math/Results'
+    fileList = os.listdir(directoryPath)
+    for fileName in fileList:
+        os.remove(directoryPath + "/" + fileName)
 
     def is_displayed(self):
-
-        ## delete old excel page before anything else happens
-
-        directoryPath = 'complex_math/Results'
-        fileList = os.listdir(directoryPath)
-        for fileName in fileList:
-            os.remove(directoryPath + "/" + fileName)
-
         return self.round_number ==1
 
     form_model='player'
@@ -59,6 +56,7 @@ class Signin(Page):
     but it is accessable by all players so it is good for storing information that needs to be passed between players.
     '''
 
+
     def before_next_page(self):
         self.session.vars['sentNames'] = {}
         self.participant.vars['sentNames_choices'] = []
@@ -73,6 +71,12 @@ class Signin(Page):
 
         ## contains a payoff for every selector per participant.
         self.participant.vars['total_payoffs'] = {}
+
+        for i in range (1, Constants.players_per_group + 1):
+            if i % 3 == 0:
+                self.participant.vars['total_payoffs'][i] = []
+
+        print(self.participant.vars['total_payoffs'])
 
         self.session.vars['SelectorInformation'] = {}
 
@@ -347,6 +351,8 @@ class waitForNames(WaitPage):
         if '' in self.session.vars['sentNames']:
             del self.session.vars['sentNames']['']
 
+        random
+
         return self.round_number == (Constants.num_rounds - Constants.players)
 
     def after_all_players_arrive(self):
@@ -376,7 +382,7 @@ class SentResults(Page):
 
         self.participant.vars['nametag'] = screen_name
 
-        return ((self.participant.vars['playerBchoicesTracker'] < (Constants.players - 1) and self.round_number > Constants.num_rounds - (Constants.players) and self.round_number < Constants.num_rounds)) and ((self.player.role() == 'roomB'))
+        return ((self.participant.vars['playerBchoicesTracker'] <= (Constants.rounds) and self.round_number > Constants.num_rounds - (Constants.players) and self.round_number < Constants.num_rounds)) and ((self.player.role() == 'roomB'))
 
 
     ## chooses 2 names to show from session list
@@ -388,19 +394,13 @@ class SentResults(Page):
         #converts list of tuples back to dictionary
         self.session.vars['sentNames'] = collections.OrderedDict(tuples)
 
-        # ## sortes name dictionaries so lower ID's are first
-        # tuplesPayoffs = sorted(self.session.vars['total_payoffs'].items(), key=lambda kv: kv[0])
-        # self.session.vars['total_payoffs'] = collections.OrderedDict(tuplesPayoffs)
-        #
-        # ##sorts selector Names
-        # tuplesSelectors = sorted(self.session.vars['SelectorInformation'].items(), key=lambda kv: kv[0])
-        # self.session.vars['SelectorInformation'] = collections.OrderedDict(tuplesSelectors)
 
         ## make the list of two choices
         for key in self.session.vars['sentNames']:
             self.participant.vars['sentNames_choices'].append(key + ', Score: ' + str(round(self.session.vars['sentNames'][key])))
 
         i = self.participant.vars['playerBchoicesTracker']
+
         choices = [self.participant.vars['sentNames_choices'][i],self.participant.vars['sentNames_choices'][i + 1]]
 
         return choices
@@ -455,6 +455,7 @@ class SentResults(Page):
         print('SelecotrIDs',selectorIDS)
         print(self.player.id_in_group)
 
+
         # for i in range (len(selectorIDS)):
         for allPlayer in self.group.get_players():
             print(allPlayer.participant.vars['name'],selectorNames[i], self.session.vars['RandomRound'] - 1, 'if selected:',
@@ -469,10 +470,10 @@ class SentResults(Page):
                     # 3. average total payoff adjusted by how many times selected to be on a team
                     # 4. store every payoff in a dictionary -- i.e if there are two choosers store a payoff under the chooser name to present at the end of the game.
 
-                allPlayer.participant.vars['total_payoffs'][selectorIDS[i]] = ((allPlayer.participant.vars['task2_payoff'] + self.participant.vars['task2_payoff']) / 2) * 1.5
-                self.participant.vars['total_payoffs'][selectorIDS[i]] = ((allPlayer.participant.vars['task2_payoff'] + self.participant.vars['task2_payoff']) / 2) * 1.5
+                allPlayer.participant.vars['total_payoffs'][selectorIDS[i]].append( ((allPlayer.participant.vars['task2_payoff'] + self.participant.vars['task2_payoff']) / 2) * 1.5 )
+                self.participant.vars['total_payoffs'][selectorIDS[i]].append( ((allPlayer.participant.vars['task2_payoff'] + self.participant.vars['task2_payoff']) / 2) * 1.5 )
             elif not (allPlayer.participant.vars['RoundsWithTeam'][selectorNames[i]].values[self.session.vars['RandomRound'] - 1]):
-                allPlayer.participant.vars['total_payoffs'][selectorIDS[i]] = allPlayer.participant.vars['task2_payoff']
+                allPlayer.participant.vars['total_payoffs'][selectorIDS[i]].append(allPlayer.participant.vars['task2_payoff'])
 
 
 class waitForTeams(WaitPage):
@@ -523,39 +524,38 @@ class Payoff(Page):
 
         ##print stuff for figuring out where to write total payoffs
 
-
-        for selectorID in selectorIDS:
-            print(self.participant.vars['total_payoffs'][selectorID])
-
-
         ## write player score and player variables
         location = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group + 2
         RandomRoundAdjust = self.session.vars['RandomRound']
-        differentSelectorName = 0
+        differentSelectorName = 3
+        round = 0
 
         for j in range (Constants.selectors * Constants.players):
             if (j + 1) % Constants.players == 0:
-                continue
+                differentSelectorName += 3
+                round = 0
             else:
                 if j + 1 == RandomRoundAdjust:
-                    total_payoff = list(self.participant.vars['total_payoffs'].values())[differentSelectorName]
+                    total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
                     style = Constants.style1
                     RandomRoundAdjust += Constants.players
-                    differentSelectorName +=1
                 else:
-                    total_payoff = self.participant.vars['task2_payoff']
+                    total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
                     style = Constants.styleNormal
 
                 for i in range (0,len(Constants.participantVarList) -1):
                     i+=1
                     Constants.resultsSheet.write(location+j,i,self.participant.vars[Constants.participantVarList[i]],style)
                 Constants.resultsSheet.write(location+j,5,total_payoff,style)
+                round += 1
 
         ## write team information
         start = ((self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group) + 2
         RandomRoundAdjust = self.session.vars['RandomRound']
         selectorName = 0
         i = 0
+
+        ## write player 1/0 based on selection
 
         for j in range (Constants.selectors * Constants.players):
             if (j + 1) % Constants.players == 0:
@@ -570,7 +570,6 @@ class Payoff(Page):
                     style = Constants.styleNormal
                 Constants.resultsSheet.write(start+j,4,int(self.participant.vars['RoundsWithTeam'][selectorNames[selectorName]].values[i]),style)
                 i += 1
-        ## write player 1/0 based on selection
 
 
         ## edit matrix Rows to display round #
@@ -586,10 +585,13 @@ class Payoff(Page):
         Constants.resultsBook.save('complex_math/Results/Results.xls')
 
         if self.player.id_in_group in selectorIDS:
-            total_payoff = self.participant.vars['total_payoffs'][self.player.id_in_group]
+            print('selector payoff list looks like', self.participant.vars['total_payoffs'])
+            total_payoff = self.participant.vars['total_payoffs'][self.player.id_in_group][self.session.vars['RandomRound'] -1]
         else:
-            total_payoff = self.participant.vars['total_payoffs'][self.session.vars['RandomSelectorID']]
-
+            print('player payoff list looks like', self.participant.vars['total_payoffs'])
+            ## actually random. but for testing we will use the first selector and first round
+            # total_payoff = self.participant.vars['total_payoffs'][random.randint(1,Constants.selectors)*3][random.randint(0,Constants.rounds-1)]
+            total_payoff = self.participant.vars['total_payoffs'][3][self.session.vars['RandomRound'] -1]
         return {
             'total_payoff': total_payoff,
             'name': self.participant.vars['name']

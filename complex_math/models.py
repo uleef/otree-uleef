@@ -32,7 +32,7 @@ class Constants(BaseConstants):
 
     name_in_url = 'complex_math_game'
     players_per_group = 6 ## players must be multiple of 3.
-    task_timer = 5
+    task_timer = 10
 
     ##Excel Styles
 
@@ -199,8 +199,6 @@ class Player(BasePlayer):
     ## Excel file with nametags - entire file : this file has a unique set of names for each letter in the alphabet
     loc = 'complex_math/nametags.xlsx'
     nametagBook = xlrd.open_workbook(loc)
-
-    # nametagBook = models.CharField(initial='complex_math/nametags.xlsx')
 
     ## this variable is the nametag that the player selects. The nametag choices for this variable are determined during the game
     nametag = models.StringField()
