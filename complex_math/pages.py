@@ -31,14 +31,17 @@ Signin page to get user name or whatever they choose to enter and set up session
 '''
 class Signin(Page):
 
-    ## delete old excel page before anything else happens
 
-    directoryPath = 'complex_math/Results'
-    fileList = os.listdir(directoryPath)
-    for fileName in fileList:
-        os.remove(directoryPath + "/" + fileName)
 
     def is_displayed(self):
+
+        ## delete old excel page before anything else happens
+
+        directoryPath = 'complex_math/Results'
+        fileList = os.listdir(directoryPath)
+        for fileName in fileList:
+            os.remove(directoryPath + "/" + fileName)
+
         return self.round_number ==1
 
     form_model='player'
@@ -55,14 +58,6 @@ class Signin(Page):
     self.session.vars[] is also a list like .participant.vars[] and can store all forms of data
     but it is accessable by all players so it is good for storing information that needs to be passed between players.
     '''
-
-    def makeWorkbook(self,sheet):
-
-        sheet.write(0, 1, 'Player Nametag',Constants.style0)
-        sheet.write(0, 2, 'Task 1 Payoff',Constants.style0)
-        sheet.write(0, 3, 'Task 2 Payoff',Constants.style0)
-        sheet.write(0, 4, 'Selected As Team',Constants.style0)
-        sheet.write(0, 5, 'Total Payoff',Constants.style0)
 
     def before_next_page(self):
         self.session.vars['sentNames'] = {}
@@ -95,7 +90,11 @@ class Signin(Page):
         ## if user names are the same then their will be a problem. Ask to sign in with first and last name...?
         if self.player.id_in_group == 3:
             ## only make workbook once.
-            self.makeWorkbook(Constants.resultsSheet)
+            Constants.resultsSheet.write(0, 1, 'Player Nametag', Constants.style0)
+            Constants.resultsSheet.write(0, 2, 'Task 1 Payoff', Constants.style0)
+            Constants.resultsSheet.write(0, 3, 'Task 2 Payoff', Constants.style0)
+            Constants.resultsSheet.write(0, 4, 'Selected As Team', Constants.style0)
+            Constants.resultsSheet.write(0, 5, 'Total Payoff', Constants.style0)
 
         '''
            index and columns are created for the data frame to create a matrix to store the rounds and player selections
