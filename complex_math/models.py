@@ -32,7 +32,7 @@ class Constants(BaseConstants):
 
     name_in_url = 'complex_math_game'
     players_per_group = 6 ## players must be multiple of 3.
-    task_timer = 15
+    task_timer = 5
 
     ##Excel Styles
 

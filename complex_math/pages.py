@@ -134,8 +134,8 @@ class Signin(Page):
 
         start = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group
         writeRounds(self,Constants.resultsSheet,start)
-
         self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer
+
 
 
 '''
@@ -145,8 +145,8 @@ class Start(Page):
     def is_displayed(self):
         return self.round_number == 1
     def before_next_page(self):
-        pass
         # self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer
+        pass
 
 
 
@@ -254,6 +254,8 @@ class Task2instructions(Page):
                 if p.name != None and p.role() == 'roomB':
                     self.session.vars['SelectorInformation'][p.id_in_group] = p.name
 
+        ##########
+        ## Doing Everything by name makes it easy to break the code
         selectorNames = list(self.session.vars['SelectorInformation'].values())
 
 
@@ -386,6 +388,13 @@ class SentResults(Page):
         #converts list of tuples back to dictionary
         self.session.vars['sentNames'] = collections.OrderedDict(tuples)
 
+        # ## sortes name dictionaries so lower ID's are first
+        # tuplesPayoffs = sorted(self.session.vars['total_payoffs'].items(), key=lambda kv: kv[0])
+        # self.session.vars['total_payoffs'] = collections.OrderedDict(tuplesPayoffs)
+        #
+        # ##sorts selector Names
+        # tuplesSelectors = sorted(self.session.vars['SelectorInformation'].items(), key=lambda kv: kv[0])
+        # self.session.vars['SelectorInformation'] = collections.OrderedDict(tuplesSelectors)
 
         ## make the list of two choices
         for key in self.session.vars['sentNames']:
@@ -511,10 +520,6 @@ class Payoff(Page):
         print()
         print('total payoff: ',self.participant.vars['total_payoffs'])
 
-        ##write player total payoff
-        location = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group
-
-        # Constants.resultsSheet.write(location,4,self.participant.vars['total_payoffs'][self.session.vars['RandomRound'] -1])
 
         ##print stuff for figuring out where to write total payoffs
 
@@ -535,7 +540,7 @@ class Payoff(Page):
                 if j + 1 == RandomRoundAdjust:
                     total_payoff = list(self.participant.vars['total_payoffs'].values())[differentSelectorName]
                     style = Constants.style1
-                    RandomRoundAdjust += 4
+                    RandomRoundAdjust += Constants.players
                     differentSelectorName +=1
                 else:
                     total_payoff = self.participant.vars['task2_payoff']
@@ -555,7 +560,7 @@ class Payoff(Page):
         for j in range (Constants.selectors * Constants.players):
             if (j + 1) % Constants.players == 0:
                 selectorName += 1
-                RandomRoundAdjust +=4
+                RandomRoundAdjust +=Constants.players
                 i = 0
                 continue
             else:
@@ -572,6 +577,8 @@ class Payoff(Page):
         numberOfrounds = []
         for i in range(0, Constants.players - 1):
             numberOfrounds.append('round ' + str(Constants.players - (i + 1)))
+
+        ## edit matrix to display selector Names
 
         self.participant.vars['RoundsWithTeam'].index = numberOfrounds
 
