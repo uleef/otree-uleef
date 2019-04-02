@@ -11,20 +11,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="211" column="36" lean-forward="true" selection-start-line="211" selection-start-column="36" selection-end-line="211" selection-end-column="36" />
+            <state relative-caret-position="308">
+              <caret line="149" column="24" lean-forward="true" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#135#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pages.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="592" column="70" lean-forward="true" selection-start-line="592" selection-start-column="70" selection-end-line="592" selection-end-column="70" />
+            <state relative-caret-position="598">
+              <caret line="87" column="39" lean-forward="true" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -76,7 +79,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>randomRound</find>
       <find>range</find>
       <find>random</find>
       <find>style</find>
@@ -106,6 +108,7 @@
       <find>randomSelector</find>
       <find>sentNames</find>
       <find>is_correct</find>
+      <find>xlsx</find>
     </findStrings>
     <replaceStrings>
       <replace>name</replace>
@@ -126,8 +129,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="341" />
-    <option name="y" value="288" />
+    <option name="x" value="107" />
+    <option name="y" value="23" />
     <option name="width" value="1772" />
     <option name="height" value="1110" />
   </component>
@@ -244,9 +247,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="148" y="23" width="1772" height="1110" extended-state="0" />
+    <frame x="107" y="23" width="1772" height="1110" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21952596" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21952596" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.31278333" />
@@ -494,13 +498,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Results/gus2.csv" />
     <entry file="file://$PROJECT_DIR$/Results/gus1.csv" />
-    <entry file="file://$PROJECT_DIR$/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="211" column="36" lean-forward="true" selection-start-line="211" selection-start-column="36" selection-end-line="211" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -510,8 +507,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="592" column="70" lean-forward="true" selection-start-line="592" selection-start-column="70" selection-end-line="592" selection-end-column="70" />
+        <state relative-caret-position="598">
+          <caret line="87" column="39" lean-forward="true" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="149" column="24" lean-forward="true" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#135#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -8,6 +8,7 @@ import numpy as np
 import csv
 import random
 import xlrd
+import os
 
 import xlwt
 from xlwt import Workbook
@@ -64,6 +65,8 @@ class Constants(BaseConstants):
     players = int((players_per_group/3)*2)
     rounds = players - 1
 
+
+
     resultsBook = Workbook()
     resultsSheet = resultsBook.add_sheet('Results Sheet')
 
@@ -74,59 +77,59 @@ class Constants(BaseConstants):
 
     participantVarList = ['name','nametag','task1_payoff','task2_payoff']
 
-    INTS1 = [
-            [1, 0],
-            [4, 1],
-            [0, 2],
-            [1, 19],
-            [34, 1],
-            [4, 12],
-            [2, 1],
-            [4, 1],
-            [0, 2],
-            [1, 19],
+    # INTS1 = [
+    #         [1, 0],
+    #         [4, 1],
+    #         [0, 2],
+    #         [1, 19],
+    #         [34, 1],
+    #         [4, 12],
+    #         [2, 1],
+    #         [4, 1],
+    #         [0, 2],
+    #         [1, 19],
+    #
+    #         [34, 1],
+    #         [4, 12],
+    #         [2, 1],
+    #         [3,1],
+    #         [4,4],
+    #         [6,8],
+    #         [2,6],
+    #         [7,10],
+    #         [11,3],
+    #         [1,5]]
+    # num_rounds = (2*len(INTS1) + players)
 
-            [34, 1],
-            [4, 12],
-            [2, 1],
-            [3,1],
-            [4,4],
-            [6,8],
-            [2,6],
-            [7,10],
-            [11,3],
-            [1,5]]
-    num_rounds = (2*len(INTS1) + players)
 
+    INTS1book = xlrd.open_workbook('complex_math/INTS1.xls')
+    INTS1 = INTS1book.sheet_by_index(0)
+    INTS2book = xlrd.open_workbook('complex_math/INTS2.xls')
+    INTS2 = INTS2book.sheet_by_index(0)
+    num_rounds = 2*(INTS1.nrows) + players
 
-    # INTS1book = xlrd.open_workbook('complex_math/INTS1.xls')
-    # INTS1 = INTS1book.sheet_by_index(0)
-    # INTS2book = xlrd.open_workbook('complex_math/INTS2.xls')
-    # INTS2 = INTS2book.sheet_by_index(0)
-    # num_rounds = 2*(INTS1.nrows) + players
-
-    INTS2 = [
-            [1, 0],
-            [4, 1],
-            [0, 2],
-            [1, 19],
-            [34, 1],
-            [4, 12],
-            [2, 1],
-            [4, 1],
-            [0, 2],
-            [1, 19],
-
-            [34, 1],
-            [4, 12],
-            [2, 1],
-            [3,1],
-            [4,4],
-            [6,8],
-            [2,6],
-            [7,10],
-            [11,3],
-            [1,5]]
+    # INTS2 = [
+    #         [1, 0],
+    #         [4, 1],
+    #         [0, 2],
+    #         [1, 19],
+    #         [34, 1],
+    #         [4, 12],
+    #         [2, 1],
+    #         [4, 1],
+    #         [0, 2],
+    #         [1, 19],
+    #
+    #         [34, 1],
+    #         [4, 12],
+    #         [2, 1],
+    #         [3,1],
+    #         [4,4],
+    #         [6,8],
+    #         [2,6],
+    #         [7,10],
+    #         [11,3],
+    #         [1,5]]
 
 
 '''
@@ -144,36 +147,36 @@ class Subsession(BaseSubsession):
             task_timer = Constants.task_timer
 
         # used if XLS list is used for questions
-        # if self.round_number < ((Constants.num_rounds - Constants.players) / 2):
-        #     for p in players:
-        #         p.task_timer = task_timer
-        #         p.int1 = Constants.INTS1.cell_value(self.round_number - 1, 0)
-        #         p.int2 = Constants.INTS1.cell_value(self.round_number - 1, 1)
-        #         p.solution = p.int1 + p.int2
-        # elif self.round_number >= ((Constants.num_rounds - Constants.players) / 2) and self.round_number < Constants.num_rounds - Constants.players:
-        #     for p in players:
-        #         p.task_timer = task_timer
-        #         p.int1 = Constants.INTS2.cell_value(self.round_number - (Constants.INTS1.nrows),0)
-        #         p.int2 = Constants.INTS2.cell_value(self.round_number - (Constants.INTS1.nrows),1)
-        #         p.solution = p.int1 + p.int2
-        # else:
-        #     pass
-
-        # used if python list is used
         if self.round_number < ((Constants.num_rounds - Constants.players) / 2):
             for p in players:
                 p.task_timer = task_timer
-                p.int1 = Constants.INTS1[self.round_number - 1][0]
-                p.int2 = Constants.INTS1[self.round_number - 1][1]
+                p.int1 = Constants.INTS1.cell_value(self.round_number - 1, 0)
+                p.int2 = Constants.INTS1.cell_value(self.round_number - 1, 1)
                 p.solution = p.int1 + p.int2
         elif self.round_number >= ((Constants.num_rounds - Constants.players) / 2) and self.round_number < Constants.num_rounds - Constants.players:
             for p in players:
                 p.task_timer = task_timer
-                p.int1 = Constants.INTS2[self.round_number - 20][0]
-                p.int2 = Constants.INTS2[self.round_number - 20][1]
+                p.int1 = Constants.INTS2.cell_value(self.round_number - (Constants.INTS1.nrows),0)
+                p.int2 = Constants.INTS2.cell_value(self.round_number - (Constants.INTS1.nrows),1)
                 p.solution = p.int1 + p.int2
         else:
             pass
+
+        # used if python list is used
+        # if self.round_number < ((Constants.num_rounds - Constants.players) / 2):
+        #     for p in players:
+        #         p.task_timer = task_timer
+        #         p.int1 = Constants.INTS1[self.round_number - 1][0]
+        #         p.int2 = Constants.INTS1[self.round_number - 1][1]
+        #         p.solution = p.int1 + p.int2
+        # elif self.round_number >= ((Constants.num_rounds - Constants.players) / 2) and self.round_number < Constants.num_rounds - Constants.players:
+        #     for p in players:
+        #         p.task_timer = task_timer
+        #         p.int1 = Constants.INTS2[self.round_number - 20][0]
+        #         p.int2 = Constants.INTS2[self.round_number - 20][1]
+        #         p.solution = p.int1 + p.int2
+        # else:
+        #     pass
 
 class Group(BaseGroup):
     pass

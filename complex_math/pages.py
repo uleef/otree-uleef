@@ -34,12 +34,7 @@ class Signin(Page):
 
 
     def is_displayed(self):
-        ## delete old excel page before anything else happens
 
-        directoryPath = 'complex_math/Results'
-        fileList = os.listdir(directoryPath)
-        for fileName in fileList:
-            os.remove(directoryPath + "/" + fileName)
         return self.round_number ==1
 
     form_model='player'
@@ -91,6 +86,14 @@ class Signin(Page):
         ## if user names are the same then their will be a problem. Ask to sign in with first and last name...?
         if self.player.id_in_group == 3:
             ## only make workbook once.
+
+            ## delete old excel page before creating new workbook
+
+            directoryPath = 'complex_math/Results'
+            fileList = os.listdir(directoryPath)
+            for fileName in fileList:
+                os.remove(directoryPath + "/" + fileName)
+
             Constants.resultsSheet.write(0, 1, 'Player Nametag', Constants.style0)
             Constants.resultsSheet.write(0, 2, 'Task 1 Payoff', Constants.style0)
             Constants.resultsSheet.write(0, 3, 'Task 2 Payoff', Constants.style0)
