@@ -137,7 +137,6 @@ class Subsession(BaseSubsession):
     def before_session_starts(self):
 
         players = self.get_players()
-
         if 'task_timer' in self.session.config:
             task_timer = self.session.config['task_timer']
         else:
