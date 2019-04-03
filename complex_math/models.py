@@ -32,8 +32,8 @@ INTS can be read in from a CSV file using dictReader
 class Constants(BaseConstants):
 
     name_in_url = 'complex_math_game'
-    players_per_group = 6 ## players must be multiple of 3.
-    task_timer = 1
+    players_per_group = 12 ## players must be multiple of 3.
+    task_timer = 10
 
     ##Excel Styles
 

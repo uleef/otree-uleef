@@ -10,6 +10,7 @@ import os
 import collections
 import pandas as pd
 import random
+import csv
 
 import xlwt
 from xlwt import Workbook
@@ -597,6 +598,11 @@ class Payoff(Page):
 
         self.participant.vars['RoundsWithTeam'].to_csv('complex_math/Results/'+self.participant.vars['name']+'.csv')
         Constants.resultsBook.save('complex_math/Results/Results.xls')
+
+        ##write the output as csv for Heroku (cause its crappy and uses a crappy storage structure)
+
+        df = pd.read_excel('complex_math/Results/Results.xls')
+        df.to_csv('complex_math/Results/Results.csv')
 
         sentNamesList = list(self.session.vars['sentNames'].keys())
         print(sentNamesList)
