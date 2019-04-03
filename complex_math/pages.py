@@ -546,6 +546,7 @@ class Payoff(Page):
                     style = Constants.style1
                     RandomRoundAdjust += Constants.players
                 else:
+                    print(self.participant.vars['total_payoffs'][differentSelectorName])
                     total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
                     style = Constants.styleNormal
 
