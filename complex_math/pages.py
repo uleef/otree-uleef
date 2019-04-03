@@ -10,7 +10,6 @@ import os
 import collections
 import pandas as pd
 import random
-import csv
 
 import xlwt
 from xlwt import Workbook
@@ -36,15 +35,15 @@ class Signin(Page):
 
     def is_displayed(self):
         ## delete old excel page before anything else happens
-
-        directoryPath = 'complex_math/Results'
-        fileList = os.listdir(directoryPath)
-        for fileName in fileList:
-            os.remove(directoryPath + "/" + fileName)
         return self.round_number ==1
 
     form_model='player'
     form_fields = ['name']
+
+    directoryPath = 'complex_math/Results'
+    fileList = os.listdir(directoryPath)
+    for fileName in fileList:
+        os.remove(directoryPath + "/" + fileName)
 
     '''
     THE MOST IMPORTANT PART OF THE GAME
@@ -441,6 +440,7 @@ class SentResults(Page):
 
         # self.participant.vars['RoundsWithTeam'].fillna(0,inplace=True)
 
+
         '''
         Calculate participant payoffs
         '''
@@ -489,6 +489,7 @@ class waitForTeams(WaitPage):
 
 class payoffWaitPage(WaitPage):
     def is_displayed(self):
+        ## saves CSV's before payoff page just in case
         return self.round_number == (Constants.num_rounds)
     def after_all_players_arrive(self):
         pass
@@ -506,6 +507,7 @@ The payoff round is determined randomly at the start of the game
 
 class Payoff(Page):
     def is_displayed(self):
+        self.participant.vars['RoundsWithTeam'].to_csv('complex_math/Results/'+self.participant.vars['name']+'.csv')
         return self.round_number == (Constants.num_rounds)
 
     def vars_for_template(self):
@@ -529,11 +531,8 @@ class Payoff(Page):
         location = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group + 2
         RandomRoundAdjust = Constants.randomRound
         differentSelectorName = 3
-        round = 0
+        round = 1
 
-
-        print(self.participant.vars['total_payoffs'])
-        print('Random ROund =', Constants.randomRound)
 
         for j in range (Constants.selectors * Constants.players):
             if (j + 1) % Constants.players == 0:
@@ -542,15 +541,11 @@ class Payoff(Page):
             else:
                 if j + 1 == RandomRoundAdjust:
 
-                    print(self.participant.vars['total_payoffs'][differentSelectorName])
-                    print(Constants.rounds - 1 - round)
 
                     total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
                     style = Constants.style1
                     RandomRoundAdjust += Constants.players
                 else:
-                    print(self.participant.vars['total_payoffs'][differentSelectorName])
-                    print(Constants.rounds - 1 - round)
 
                     total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
                     style = Constants.styleNormal
@@ -596,16 +591,18 @@ class Payoff(Page):
 
         self.participant.vars['RoundsWithTeam'].index = numberOfrounds
 
-        self.participant.vars['RoundsWithTeam'].to_csv('complex_math/Results/'+self.participant.vars['name']+'.csv')
         Constants.resultsBook.save('complex_math/Results/Results.xls')
+
 
         ##write the output as csv for Heroku (cause its crappy and uses a crappy storage structure)
 
-        df = pd.read_excel('complex_math/Results/Results.xls')
-        df.to_csv('complex_math/Results/Results.csv')
+        print(os.path.getsize('complex_math/Results/Results.xls'))
+
+        if os.path.getsize(('complex_math/Results/Results.xls')) > 0:
+            df = pd.read_excel('complex_math/Results/Results.xls')
+            df.to_csv('complex_math/Results/Results.csv')
 
         sentNamesList = list(self.session.vars['sentNames'].keys())
-        print(sentNamesList)
         if self.player.id_in_group in selectorIDS:
             total_payoff = self.participant.vars['total_payoffs'][self.player.id_in_group][Constants.randomRound -1]
         else:
@@ -615,8 +612,6 @@ class Payoff(Page):
                 total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][Constants.rounds - 1]
             else:
                 location = sentNamesList.index(self.player.participant.vars['nametag'])
-                print(location)
-                print(Constants.randomLocationAdjust)
 
                 total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][location - Constants.randomLocationAdjust]
             ## actually random. but for testing we will use the first selector and first round
