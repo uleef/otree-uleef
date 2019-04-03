@@ -108,8 +108,8 @@ class Subsession(BaseSubsession):
         elif self.round_number >= ((Constants.num_rounds - Constants.players) / 2) and self.round_number < Constants.num_rounds - Constants.players:
             for p in players:
                 p.task_timer = task_timer
-                p.int1 = Constants.INTS2[self.round_number - 20][0]
-                p.int2 = Constants.INTS2[self.round_number - 20][1]
+                p.int1 = Constants.INTS2[self.round_number - len(Constants.INTS1)][0]
+                p.int2 = Constants.INTS2[self.round_number - len(Constants.INTS1)][1]
                 p.solution = p.int1 + p.int2
         else:
             pass
