@@ -40,10 +40,6 @@ class Signin(Page):
     form_model='player'
     form_fields = ['name']
 
-    directoryPath = 'complex_math/Results'
-    fileList = os.listdir(directoryPath)
-    for fileName in fileList:
-        os.remove(directoryPath + "/" + fileName)
 
     '''
     THE MOST IMPORTANT PART OF THE GAME
@@ -59,6 +55,13 @@ class Signin(Page):
 
 
     def before_next_page(self):
+
+        directoryPath = 'complex_math/Results'
+        fileList = os.listdir(directoryPath)
+        for fileName in fileList:
+            os.remove(directoryPath + "/" + fileName)
+
+
         self.session.vars['sentNames'] = {}
         self.participant.vars['sentNames_choices'] = []
         self.participant.vars['selectionTable'] = []
