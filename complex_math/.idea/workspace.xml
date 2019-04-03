@@ -14,8 +14,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="65" column="10" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="10" />
+            <state relative-caret-position="241">
+              <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
               <folding>
                 <element signature="e#0#135#0" expanded="true" />
               </folding>
@@ -26,8 +26,8 @@
       <file leaf-file-name="pages.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="548" column="84" lean-forward="true" selection-start-line="548" selection-start-column="84" selection-end-line="548" selection-end-column="84" />
+            <state relative-caret-position="643">
+              <caret line="566" column="115" selection-start-line="566" selection-start-column="115" selection-end-line="566" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -35,8 +35,8 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="37" column="15" lean-forward="true" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+            <state relative-caret-position="618">
+              <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -92,23 +92,23 @@
       <find>t</find>
       <find>start</find>
       <find>playerB</find>
+      <find>rounds</find>
       <find>playerBchoices</find>
       <find>total_payoffs</find>
       <find>id_in</find>
       <find>selectorIDS</find>
       <find>playerScoreDic</find>
       <find>playerScore</find>
-      <find />
-      <find>print</find>
+      <find>total payoff</find>
       <find>payoff</find>
       <find>j</find>
       <find>randomROund</find>
       <find>RandomRound</find>
       <find>randomSelector</find>
       <find>sentNames</find>
-      <find>is_correct</find>
-      <find>xlsx</find>
-      <find>rounds</find>
+      <find>correct</find>
+      <find>print</find>
+      <find>randomRound</find>
     </findStrings>
     <replaceStrings>
       <replace>name</replace>
@@ -122,29 +122,35 @@
         <option value="$PROJECT_DIR$/templates/complex_math/Signin.html" />
         <option value="$PROJECT_DIR$/templates/complex_math/Payoff.html" />
         <option value="$PROJECT_DIR$/templates/complex_math/Nametag.html" />
+        <option value="$PROJECT_DIR$/pages.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
         <option value="$PROJECT_DIR$/models.py" />
-        <option value="$PROJECT_DIR$/pages.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="146" />
-    <option name="y" value="23" />
-    <option name="width" value="1772" />
-    <option name="height" value="1110" />
+    <option name="x" value="191" />
+    <option name="y" value="26" />
+    <option name="width" value="1519" />
+    <option name="height" value="1177" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="complex_math" type="b2602c69:ProjectViewProjectNode" />
               <item name="complex_math" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="complex_math" type="b2602c69:ProjectViewProjectNode" />
+              <item name="complex_math" type="462c0819:PsiDirectoryNode" />
+              <item name="Results" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="complex_math" type="b2602c69:ProjectViewProjectNode" />
@@ -164,7 +170,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,19 +252,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="146" y="23" width="1772" height="1110" extended-state="0" />
-    <editor active="true" />
+    <frame x="191" y="26" width="1519" height="1177" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21952596" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.27254772" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.31278333" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="0" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.31278333" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.3291866" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -274,7 +278,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="19" />
+      <option name="time" value="21" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -497,18 +501,20 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Results/gus2.csv" />
-    <entry file="file://$PROJECT_DIR$/Results/gus1.csv" />
+    <entry file="file://$PROJECT_DIR$/Results/gus1.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="37" column="15" lean-forward="true" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
+        <state relative-caret-position="618">
+          <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="65" column="10" selection-start-line="65" selection-start-column="4" selection-end-line="65" selection-end-column="10" />
+        <state relative-caret-position="241">
+          <caret line="71" column="19" selection-start-line="71" selection-start-column="19" selection-end-line="71" selection-end-column="19" />
           <folding>
             <element signature="e#0#135#0" expanded="true" />
           </folding>
@@ -517,8 +523,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="548" column="84" lean-forward="true" selection-start-line="548" selection-start-column="84" selection-end-line="548" selection-end-column="84" />
+        <state relative-caret-position="643">
+          <caret line="566" column="115" selection-start-line="566" selection-start-column="115" selection-end-line="566" selection-end-column="115" />
         </state>
       </provider>
     </entry>

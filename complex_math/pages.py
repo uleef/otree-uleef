@@ -34,7 +34,12 @@ class Signin(Page):
 
 
     def is_displayed(self):
+        ## delete old excel page before anything else happens
 
+        directoryPath = 'complex_math/Results'
+        fileList = os.listdir(directoryPath)
+        for fileName in fileList:
+            os.remove(directoryPath + "/" + fileName)
         return self.round_number ==1
 
     form_model='player'
@@ -86,14 +91,6 @@ class Signin(Page):
         ## if user names are the same then their will be a problem. Ask to sign in with first and last name...?
         if self.player.id_in_group == 3:
             ## only make workbook once.
-
-            ## delete old excel page before creating new workbook
-
-            directoryPath = 'complex_math/Results'
-            fileList = os.listdir(directoryPath)
-            for fileName in fileList:
-                os.remove(directoryPath + "/" + fileName)
-
             Constants.resultsSheet.write(0, 1, 'Player Nametag', Constants.style0)
             Constants.resultsSheet.write(0, 2, 'Task 1 Payoff', Constants.style0)
             Constants.resultsSheet.write(0, 3, 'Task 2 Payoff', Constants.style0)
@@ -535,6 +532,7 @@ class Payoff(Page):
 
 
         print(self.participant.vars['total_payoffs'])
+        print('Random ROund =', Constants.randomRound)
 
         for j in range (Constants.selectors * Constants.players):
             if (j + 1) % Constants.players == 0:
@@ -542,18 +540,27 @@ class Payoff(Page):
                 round = 0
             else:
                 if j + 1 == RandomRoundAdjust:
+
+                    print(self.participant.vars['total_payoffs'][differentSelectorName])
+                    print(Constants.rounds - 1 - round)
+
                     total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
                     style = Constants.style1
                     RandomRoundAdjust += Constants.players
                 else:
                     print(self.participant.vars['total_payoffs'][differentSelectorName])
+                    print(Constants.rounds - 1 - round)
+
                     total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
                     style = Constants.styleNormal
+
+
 
                 for i in range (0,len(Constants.participantVarList) -1):
                     i+=1
                     Constants.resultsSheet.write(location+j,i,self.participant.vars[Constants.participantVarList[i]],style)
                 Constants.resultsSheet.write(location+j,5,total_payoff,style)
+
                 round += 1
 
         ## write team information
