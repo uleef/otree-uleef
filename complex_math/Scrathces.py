@@ -50,6 +50,7 @@ if os.path.isfile('Results/TestCSV.csv'):
             scoreArray.append(key)
             for value in total_payoffs[key]:
                 scoreArray.append(value)
+            scoreArray.append('\n')
         test_writer.writerow(scoreArray)
 
 

@@ -19,13 +19,13 @@
     <link rel="stylesheet" type="text/css"
           href="{% static 'global/matrix.css' %}"/>
 
-   <p>
-              The next part of the experiment is task B. The score that you receive in this task will count to towards your total payoff.
+            <p>
+              The next part of the experiment is task B. The score that you receive in this task will count towards your total payoff.
             </p>
             <p>
-                Task B is identical to task A however slightly more difficult and you will have more time .
+                Task B is identical to task A, however slightly more difficult and you will have more time.
                 In this task you will have 5 minutes to answer as many questions as possible.
-              Once you have entered your summation, click the <b>Next</b> button or press the <b>Enter</b> key.
+                Once you have entered your summation, click the <b>Next</b> button or press the <b>Enter</b> key.
             </p>
 
             <p>
@@ -33,16 +33,15 @@
                   Your score will not decrease if you provide an incorrect answer.
             </p>
 
-            <h4>Before preceding please select a name that will be used when your task A score is shared</h4>
-            <h4>In task A you scored {{ total_payoff }}</h4>
+            <h2>Please select a name that will be used when your task A score is shared</h2>
+            <h2>In task A you scored {{ total_payoff }}</h2>
 
 </div>
 
-    <br><br>
+
     {% formfield player.nametag %}
 
-      {% next_button %}<br><br><br>
-
+      {% next_button %}
 
 
 {% endblock %}
