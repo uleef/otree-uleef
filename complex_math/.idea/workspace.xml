@@ -14,8 +14,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1872">
-              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+            <state relative-caret-position="1221">
+              <caret line="172" column="71" lean-forward="true" selection-start-line="172" selection-start-column="71" selection-end-line="172" selection-end-column="71" />
               <folding>
                 <element signature="e#0#135#0" expanded="true" />
               </folding>
@@ -23,7 +23,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Payoff.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Payoff.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/complex_math/Payoff.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pages.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="670" column="29" selection-start-line="670" selection-start-column="29" selection-end-line="670" selection-end-column="29" />
+            <state relative-caret-position="410">
+              <caret line="551" column="18" lean-forward="true" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -106,8 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>start</find>
-      <find>playerB</find>
       <find>rounds</find>
       <find>playerBchoices</find>
       <find>total_payoffs</find>
@@ -136,6 +134,8 @@
       <find>sheet</find>
       <find>write</find>
       <find>task1</find>
+      <find>sent</find>
+      <find>choices</find>
     </findStrings>
     <replaceStrings>
       <replace>name</replace>
@@ -153,14 +153,14 @@
         <option value="$PROJECT_DIR$/templates/complex_math/SentResults.html" />
         <option value="$PROJECT_DIR$/templates/complex_math/Task2instructions.html" />
         <option value="$PROJECT_DIR$/models.py" />
-        <option value="$PROJECT_DIR$/pages.py" />
         <option value="$PROJECT_DIR$/templates/complex_math/Payoff.html" />
+        <option value="$PROJECT_DIR$/pages.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="59" />
-    <option name="y" value="23" />
+    <option name="x" value="26" />
+    <option name="y" value="36" />
     <option name="width" value="1920" />
     <option name="height" value="1177" />
   </component>
@@ -303,7 +303,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="59" y="23" width="1920" height="1177" extended-state="0" />
+    <frame x="26" y="36" width="1920" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20625" />
@@ -493,16 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1872">
-          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scrathces.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -520,20 +510,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="670" column="29" selection-start-line="670" selection-start-column="29" selection-end-line="670" selection-end-column="29" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Payoff.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1221">
+          <caret line="172" column="71" lean-forward="true" selection-start-line="172" selection-start-column="71" selection-end-line="172" selection-end-column="71" />
+          <folding>
+            <element signature="e#0#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="551" column="18" lean-forward="true" selection-start-line="551" selection-start-column="18" selection-end-line="551" selection-end-column="18" />
+          <folding>
+            <element signature="e#1#12#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -549,7 +549,6 @@ class Payoff(Page):
 
                 ##would be best not to include this part
                 player_writer.writerow([Constants.randomRound,Constants.randomSelector,Constants.randomLocationAdjust])
-                player_writer.writerow([str(self.participant.vars[self.session.vars['sentNames']])])
                 ##
 
                 player_writer.writerow([])
