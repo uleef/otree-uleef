@@ -547,8 +547,8 @@ class Payoff(Page):
                 player_writer.writerow([])
                 player_writer.writerow(['RandomRounds','RandomSelector'])
                 player_writer.writerow([Constants.randomRound,Constants.randomSelector])
-                print([])
-                print([])
+                player_writer.writerow([])
+                player_writer.writerow([])
 
         ## edit matrix Rows to display round #
         numberOfrounds = []
@@ -651,6 +651,16 @@ class Payoff(Page):
             else: ## they are middle of the group else
                 location = sentNamesList.index(self.player.participant.vars['nametag'])
                 total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][location - Constants.randomLocationAdjust]
+
+        ##append final payoff to csv file.
+        if os.path.isfile('complex_math/Results/' + self.participant.vars['name'] + '.csv'):
+
+            with open('complex_math/Results/' + self.participant.vars['name'] + '.csv', 'a') as player_csv:
+
+                player_writer = csv.writer(player_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+                player_writer.writerow(['PLAYER TOTAL PAYOFFF:',total_payoff])
+
         return {
             'taskA_payoff': self.participant.vars['task1_payoff'],
             'taskB_payoff': self.partifipant.vars['task2_payoff'],

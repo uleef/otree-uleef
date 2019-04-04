@@ -35,8 +35,8 @@
       <file leaf-file-name="pages.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="658" column="9" lean-forward="true" selection-start-line="658" selection-start-column="9" selection-end-line="658" selection-end-column="9" />
+            <state relative-caret-position="357">
+              <caret line="661" column="78" selection-start-line="661" selection-start-column="78" selection-end-line="661" selection-end-column="78" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -158,7 +158,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="70" />
     <option name="y" value="87" />
     <option name="width" value="1920" />
@@ -303,7 +303,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="70" y="87" width="1920" height="1177" extended-state="1" />
+    <frame x="70" y="87" width="1920" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20625" />
@@ -529,8 +529,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="658" column="9" lean-forward="true" selection-start-line="658" selection-start-column="9" selection-end-line="658" selection-end-column="9" />
+        <state relative-caret-position="357">
+          <caret line="661" column="78" selection-start-line="661" selection-start-column="78" selection-end-line="661" selection-end-column="78" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
           </folding>
