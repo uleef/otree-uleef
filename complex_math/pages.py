@@ -94,13 +94,13 @@ class Signin(Page):
 
 
         ## if user names are the same then their will be a problem. Ask to sign in with first and last name...?
-        if self.player.id_in_group == 3:
-            ## only make workbook once.
-            Constants.resultsSheet.write(0, 1, 'Player Nametag', Constants.style0)
-            Constants.resultsSheet.write(0, 2, 'Task 1 Payoff', Constants.style0)
-            Constants.resultsSheet.write(0, 3, 'Task 2 Payoff', Constants.style0)
-            Constants.resultsSheet.write(0, 4, 'Selected As Team', Constants.style0)
-            Constants.resultsSheet.write(0, 5, 'Total Payoff', Constants.style0)
+        # if self.player.id_in_group == 3:
+        #     ## only make workbook once.
+        #     Constants.resultsSheet.write(0, 1, 'Player Nametag', Constants.style0)
+        #     Constants.resultsSheet.write(0, 2, 'Task 1 Payoff', Constants.style0)
+        #     Constants.resultsSheet.write(0, 3, 'Task 2 Payoff', Constants.style0)
+        #     Constants.resultsSheet.write(0, 4, 'Selected As Team', Constants.style0)
+        #     Constants.resultsSheet.write(0, 5, 'Total Payoff', Constants.style0)
 
         '''
            index and columns are created for the data frame to create a matrix to store the rounds and player selections
