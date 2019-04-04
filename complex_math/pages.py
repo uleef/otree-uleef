@@ -545,8 +545,13 @@ class Payoff(Page):
                 player_writer.writerow(scoreArray)
 
                 player_writer.writerow([])
-                player_writer.writerow(['RandomRounds','RandomSelector'])
-                player_writer.writerow([Constants.randomRound,Constants.randomSelector])
+                player_writer.writerow(['RandomRounds','RandomSelector','Random Adjustment'])
+
+                ##would be best not to include this part
+                player_writer.writerow([Constants.randomRound,Constants.randomSelector,Constants.randomLocationAdjust])
+                player_writer.writerow([str(self.participant.vars[self.session.vars['sentNames']])])
+                ##
+
                 player_writer.writerow([])
                 player_writer.writerow([])
 
@@ -667,8 +672,6 @@ class Payoff(Page):
             'total_payoff': total_payoff,
             'name': self.participant.vars['name']
         }
-
-
 
 
 page_sequence = [
