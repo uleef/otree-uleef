@@ -138,7 +138,6 @@ class Signin(Page):
 
         start = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group
         writeRounds(self,Constants.resultsSheet,start)
-        self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer
 
 
 
@@ -149,7 +148,7 @@ class Start(Page):
     def is_displayed(self):
         return self.round_number == 1
     def before_next_page(self):
-        # self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer
+        self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer
         pass
 
 
@@ -248,9 +247,6 @@ class Task2instructions(Page):
         }
 
     def before_next_page(self):
-        self.player.task_timer = Constants.task_timer
-        self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer
-
 
         ## names the columns of the data frame based on the provided names of the selectors
         for allPlayers in self.group.get_players():
@@ -282,6 +278,11 @@ class Task2instructions(Page):
         start = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group
 
         writeSelectors(self, Constants.resultsSheet, start)
+
+
+        ##could have possibly broken everything by moving this down here.
+        self.player.task_timer = Constants.task_timer2
+        self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer2
 
 
 
@@ -630,7 +631,7 @@ class Payoff(Page):
 
 page_sequence = [
     Signin,
-    # Start,
+    Start,
     RoomATask,
     ResultsWaitPage,
     Task2instructions,

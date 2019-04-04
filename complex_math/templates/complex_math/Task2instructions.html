@@ -12,13 +12,34 @@
 <p class = "text-success">
     </p>
 
+ <h2 class="panel-sub-heading">
+
+      <p>
+              The next part of the experiment is task B. The score that you receive in this task will count to towards your total payoff.
+            </p>
+            <p>
+                The task is identical to task A however slightly more difficult and you will have more time .
+                In this task you will have {{ player.task_timer2 }} to answer as many questions as possible.
+              Once you have entered your summation, click the <b>Next</b> button or press the <b>Enter</b> key.
+            </p>
+
+            <p>
+                You will get <b>1 point for each correct answer</b>.
+                  Your score will not decrease if you provide an incorrect answer.
+            </p>
+
+
+    </h2>
+
     <div class="panel panel-success">
 
-        <div class="panel-heading">
+        <h4 class="panel-heading">
 
-            <h4>In this task you scored {{ total_payoff  }}</h4>
+            <h4/> Before preceding to Task B please select a nametag</h4>
+            <h4>In task A you scored {{ total_payoff  }}</h4>
             <br><br>
-            <h4>Please select a name that will be used when your score is shared</h4>
+            <h4>Please select a name that will be used when your task A score is shared</h4>
+
         </div>
     </div>
     </div>
