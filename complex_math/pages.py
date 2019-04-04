@@ -667,7 +667,7 @@ class Payoff(Page):
 
         return {
             'taskA_payoff': self.participant.vars['task1_payoff'],
-            'taskB_payoff': self.partifipant.vars['task2_payoff'],
+            'taskB_payoff': self.participant.vars['task2_payoff'],
             'total_payoff': total_payoff,
             'name': self.participant.vars['name']
         }
