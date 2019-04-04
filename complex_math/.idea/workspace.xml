@@ -14,8 +14,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="74" column="4" selection-start-line="74" selection-start-column="6" selection-end-line="76" selection-end-column="49" />
+            <state relative-caret-position="424">
+              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
               <folding>
                 <element signature="e#0#135#0" expanded="true" />
               </folding>
@@ -35,7 +35,7 @@
       <file leaf-file-name="pages.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9750">
+            <state relative-caret-position="48">
               <caret line="650" column="39" lean-forward="true" selection-start-line="650" selection-start-column="39" selection-end-line="650" selection-end-column="39" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
@@ -489,23 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Payoff.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9750">
-          <caret line="650" column="39" lean-forward="true" selection-start-line="650" selection-start-column="39" selection-end-line="650" selection-end-column="39" />
-          <folding>
-            <element signature="e#1#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scrathces.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -516,10 +499,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="650" column="39" lean-forward="true" selection-start-line="650" selection-start-column="39" selection-end-line="650" selection-end-column="39" />
+          <folding>
+            <element signature="e#1#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Payoff.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="39" lean-forward="true" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="74" column="4" selection-start-line="74" selection-start-column="6" selection-end-line="76" selection-end-column="49" />
+        <state relative-caret-position="424">
+          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding>
             <element signature="e#0#135#0" expanded="true" />
           </folding>
