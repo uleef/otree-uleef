@@ -139,7 +139,7 @@ class Player(BasePlayer):
 
     ## player timer. The task timer is called and initiated when the task starts
     task_timer = models.PositiveIntegerField()
-
+    task_timer2 = models.PositiveIntegerField()
     ## used to store name that is entered by the player
     name = models.StringField()
 
