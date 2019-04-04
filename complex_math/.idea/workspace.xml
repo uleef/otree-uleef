@@ -14,8 +14,8 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+            <state relative-caret-position="450">
+              <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
               <folding>
                 <element signature="e#0#135#0" expanded="true" />
               </folding>
@@ -26,7 +26,7 @@
       <file leaf-file-name="pages.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1877">
+            <state relative-caret-position="1815">
               <caret line="136" column="33" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="33" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
@@ -38,7 +38,7 @@
       <file leaf-file-name="Scrathces.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scrathces.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
+            <state relative-caret-position="780">
               <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -50,8 +50,8 @@
       <file leaf-file-name="scratch.py" pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="40" lean-forward="true" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+            <state relative-caret-position="540">
+              <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
               <folding>
                 <element signature="e#1#14#0" expanded="true" />
               </folding>
@@ -62,7 +62,7 @@
       <file leaf-file-name="Task2instructions.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/complex_math/Task2instructions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
+            <state relative-caret-position="405">
               <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="SentResults.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/complex_math/SentResults.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="360">
               <caret line="24" column="78" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
             </state>
           </provider>
@@ -80,8 +80,8 @@
       <file leaf-file-name="Start.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/complex_math/Start.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="465">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -149,10 +149,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="31" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="136" />
     <option name="y" value="23" />
-    <option name="width" value="1920" />
+    <option name="width" value="1636" />
     <option name="height" value="1177" />
   </component>
   <component name="ProjectView">
@@ -160,7 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -181,6 +180,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,13 +289,13 @@
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20625" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.31278333" />
       <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="0" weight="0.32910246" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.31278333" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.3291866" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -314,13 +314,7 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag.html" />
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Payoff.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -328,9 +322,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag2.html" />
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Task2instructions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -362,13 +354,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag.html" />
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Payoff.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -376,9 +362,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag2.html" />
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Task2instructions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -410,13 +394,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag.html" />
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Payoff.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -424,9 +402,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag2.html" />
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Task2instructions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -441,9 +417,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag2.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag2.html" />
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Signin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -480,34 +454,22 @@
     <entry file="file://$PROJECT_DIR$/Results/HasToBe">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Results/TestCSV.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="5" lean-forward="true" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Results/TestCSV.csv" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="40" lean-forward="true" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+        <state relative-caret-position="540">
+          <caret line="38" column="40" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
           <folding>
             <element signature="e#1#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/complex_math/Nametag.html" />
     <entry file="file://$PROJECT_DIR$/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+        <state relative-caret-position="450">
+          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
           <folding>
             <element signature="e#0#135#0" expanded="true" />
           </folding>
@@ -516,28 +478,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/complex_math/SentResults.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
+        <state relative-caret-position="360">
           <caret line="24" column="78" selection-start-line="24" selection-start-column="78" selection-end-line="24" selection-end-column="78" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Task2instructions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
+        <state relative-caret-position="405">
           <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Start.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1877">
+        <state relative-caret-position="1815">
           <caret line="136" column="33" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="33" />
           <folding>
             <element signature="e#1#12#0" expanded="true" />
@@ -547,7 +509,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Scrathces.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
+        <state relative-caret-position="780">
           <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
