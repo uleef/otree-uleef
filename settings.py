@@ -73,8 +73,9 @@ ADMIN_USERNAME = 'admin'
 ADMIN_PASSWORD = 'password' #environ.get('OTREE_ADMIN_PASSWORD')
 
 
-# Consider '', None, and '0' to be empty/false
-DEBUG = (environ.get('OTREE_PRODUCTION') in {None, '', '0'})
+# Consider '', None, and '0' to be empty/false CHANGE THIS TO BE IN PRODUCTION / DEBUG mode
+# DEBUG = (environ.get('OTREE_PRODUCTION') in {None, '', '0'})
+DEBUG = 0
 
 DEMO_PAGE_INTRO_HTML = """
 Here are various games implemented with
