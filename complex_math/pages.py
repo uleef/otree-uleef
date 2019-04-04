@@ -595,16 +595,18 @@ class Payoff(Page):
 
         self.participant.vars['RoundsWithTeam'].index = numberOfrounds
 
-        Constants.resultsBook.save('complex_math/Results/Results.xls')
+
+        ## excel spreadsheet doesn't matter in HEROKU :(
+        # Constants.resultsBook.save('complex_math/Results/Results.xls')
 
 
         ##write the output as csv for Heroku (cause its crappy and uses a crappy storage structure)
 
-        print(os.path.getsize('complex_math/Results/Results.xls'))
+        # print(os.path.getsize('complex_math/Results/Results.xls'))
 
-        if os.path.getsize(('complex_math/Results/Results.xls')) > 0:
-            df = pd.read_excel('complex_math/Results/Results.xls')
-            df.to_csv('complex_math/Results/Results.csv')
+        # if os.path.getsize(('complex_math/Results/Results.xls')) > 0:
+        #     df = pd.read_excel('complex_math/Results/Results.xls')
+        #     df.to_csv('complex_math/Results/Results.csv')
 
         sentNamesList = list(self.session.vars['sentNames'].keys())
         if self.player.id_in_group in selectorIDS:

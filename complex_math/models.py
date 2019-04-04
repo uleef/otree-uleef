@@ -33,8 +33,8 @@ class Constants(BaseConstants):
 
     name_in_url = 'complex_math_game'
     players_per_group = 12 ## players must be multiple of 3.
-    task_timer = 20
-    task_timer2 = 40
+    task_timer = 120
+    task_timer2 = 300
 
     ##Excel Styles
 
@@ -177,7 +177,6 @@ class Player(BasePlayer):
             self.task1payoff_score = 1.0
         else:
             self.task1payoff_score = 0.0
-
 
 
     def score_task2(self):
