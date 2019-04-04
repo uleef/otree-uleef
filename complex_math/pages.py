@@ -652,6 +652,8 @@ class Payoff(Page):
                 location = sentNamesList.index(self.player.participant.vars['nametag'])
                 total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][location - Constants.randomLocationAdjust]
         return {
+            'taskA_payoff': self.participant.vars['task1_payoff'],
+            'taskB_payoff': self.partifipant.vars['task2_payoff'],
             'total_payoff': total_payoff,
             'name': self.participant.vars['name']
         }
