@@ -6,6 +6,8 @@ from . import models
 from otree.api import Currency as c, currency_range
 from ._builtin import Page, WaitPage
 from .models import Constants
+
+import csv
 import os
 import collections
 import pandas as pd
@@ -493,7 +495,6 @@ class waitForTeams(WaitPage):
 
 class payoffWaitPage(WaitPage):
     def is_displayed(self):
-        ## saves CSV's before payoff page just in case
         return self.round_number == (Constants.num_rounds)
     def after_all_players_arrive(self):
         pass
@@ -511,7 +512,21 @@ The payoff round is determined randomly at the start of the game
 
 class Payoff(Page):
     def is_displayed(self):
+        ## saves payoffs just incase
         self.participant.vars['RoundsWithTeam'].to_csv('complex_math/Results/'+self.participant.vars['name']+'.csv')
+
+        ##writes player data to their csv file
+
+        if os.path('complex_math/Results/'+self.participant.vars['name']+'.csv'):
+
+            with open('complex_math/Results/'+self.participant.vars['name']+'.csv', mode='w') as player_csv:
+                player_writer = csv.writer(player_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+                player_writer.writerow([''])
+                player_writer.writerow([''])
+                player_writer.writerow([self.participant.vars['name'],self.partipant.vars['nametag'],self.participant.vars['task1_payoff'],self.participant.vars['task2_payoff']])
+                player_writer.writerow([str(self.participant.vars['total_payoffs'])])
+
         return self.round_number == (Constants.num_rounds)
 
     def vars_for_template(self):
