@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1221">
-              <caret line="172" column="71" lean-forward="true" selection-start-line="172" selection-start-column="71" selection-end-line="172" selection-end-column="71" />
+            <state relative-caret-position="420">
+              <caret line="74" column="4" selection-start-line="74" selection-start-column="6" selection-end-line="76" selection-end-column="49" />
               <folding>
                 <element signature="e#0#135#0" expanded="true" />
               </folding>
@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pages.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="668" column="55" selection-start-line="668" selection-start-column="55" selection-end-line="668" selection-end-column="55" />
+            <state relative-caret-position="9750">
+              <caret line="650" column="39" lean-forward="true" selection-start-line="650" selection-start-column="39" selection-end-line="650" selection-end-column="39" />
               <folding>
                 <element signature="e#1#12#0" expanded="true" />
               </folding>
@@ -152,15 +152,15 @@
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.py" />
         <option value="$PROJECT_DIR$/templates/complex_math/SentResults.html" />
         <option value="$PROJECT_DIR$/templates/complex_math/Task2instructions.html" />
-        <option value="$PROJECT_DIR$/models.py" />
         <option value="$PROJECT_DIR$/templates/complex_math/Payoff.html" />
         <option value="$PROJECT_DIR$/pages.py" />
+        <option value="$PROJECT_DIR$/models.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="26" />
-    <option name="y" value="36" />
+    <option name="x" value="23" />
+    <option name="y" value="60" />
     <option name="width" value="1920" />
     <option name="height" value="1177" />
   </component>
@@ -174,17 +174,6 @@
           <expand>
             <path>
               <item name="complex_math" type="b2602c69:ProjectViewProjectNode" />
-              <item name="complex_math" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="complex_math" type="b2602c69:ProjectViewProjectNode" />
-              <item name="complex_math" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="complex_math" type="b2602c69:ProjectViewProjectNode" />
-              <item name="complex_math" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="complex_math" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -303,7 +292,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="26" y="36" width="1920" height="1177" extended-state="0" />
+    <frame x="23" y="60" width="1920" height="1177" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20625" />
@@ -493,16 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scrathces.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/complex_math/Task2instructions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
@@ -517,22 +496,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models.py">
+    <entry file="file://$PROJECT_DIR$/pages.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1221">
-          <caret line="172" column="71" lean-forward="true" selection-start-line="172" selection-start-column="71" selection-end-line="172" selection-end-column="71" />
+        <state relative-caret-position="9750">
+          <caret line="650" column="39" lean-forward="true" selection-start-line="650" selection-start-column="39" selection-end-line="650" selection-end-column="39" />
           <folding>
-            <element signature="e#0#135#0" expanded="true" />
+            <element signature="e#1#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages.py">
+    <entry file="file://$PROJECT_DIR$/Scrathces.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="668" column="55" selection-start-line="668" selection-start-column="55" selection-end-line="668" selection-end-column="55" />
+        <state relative-caret-position="780">
+          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
           <folding>
-            <element signature="e#1#12#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="74" column="4" selection-start-line="74" selection-start-column="6" selection-end-line="76" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#135#0" expanded="true" />
           </folding>
         </state>
       </provider>

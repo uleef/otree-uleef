@@ -72,9 +72,13 @@ class Constants(BaseConstants):
 
     ##random numbers for payoffs
 
-    randomRound = random.randint(1,rounds)
-    randomSelector = random.randint(1,selectors)*3
-    randomLocationAdjust = random.randint(0, 1)
+    # randomRound = random.randint(1,rounds)
+    # randomSelector = random.randint(1,selectors)*3
+    # randomLocationAdjust = random.randint(0, 1)
+
+    randomRound = 3
+    randomSelector = 3
+    randomLocationAdjust = 0
 
     participantVarList = ['name','nametag','task1_payoff','task2_payoff']
 
