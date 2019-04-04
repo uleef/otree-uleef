@@ -475,8 +475,8 @@ class SentResults(Page):
                     # 3. average total payoff adjusted by how many times selected to be on a team
                     # 4. store every payoff in a dictionary -- i.e if there are two choosers store a payoff under the chooser name to present at the end of the game.
 
-                allPlayer.participant.vars['total_payoffs'][selectorIDS[i]].append( ((allPlayer.participant.vars['task2_payoff'] + self.participant.vars['task2_payoff']) / 2) * 1.5 )
-                self.participant.vars['total_payoffs'][selectorIDS[i]].append( ((allPlayer.participant.vars['task2_payoff'] + self.participant.vars['task2_payoff']) / 2) * 1.5 )
+                allPlayer.participant.vars['total_payoffs'][selectorIDS[i]].append( ((allPlayer.participant.vars['task2_payoff'] + self.participant.vars['task2_payoff']) / 2) * 2 )
+                self.participant.vars['total_payoffs'][selectorIDS[i]].append( ((allPlayer.participant.vars['task2_payoff'] + self.participant.vars['task2_payoff']) / 2) * 2 )
             elif not (allPlayer.participant.vars['RoundsWithTeam'][selectorNames[i]].values[j]):
                 allPlayer.participant.vars['total_payoffs'][selectorIDS[i]].append(allPlayer.participant.vars['task2_payoff'])
             print(allPlayer.participant.vars['name'],'('+allPlayer.participant.vars['nametag']+'):',allPlayer.participant.vars['total_payoffs'],'selected',allPlayer.participant.vars['RoundsWithTeam'][selectorNames[i]].values[j])
@@ -530,8 +530,8 @@ class Payoff(Page):
 
                 player_writer = csv.writer(player_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
-                player_writer.writerow([''])
-                player_writer.writerow([''])
+                player_writer.writerow([])
+                player_writer.writerow([])
                 player_writer.writerow(
                     [self.player.id_in_group, self.participant.vars['name'], self.participant.vars['nametag'],
                      self.participant.vars['task1_payoff'], self.participant.vars['task2_payoff']])
@@ -541,7 +541,14 @@ class Payoff(Page):
                     scoreArray.append(selectorNames[int(key / 3) - 1])
                     for value in self.participant.vars['total_payoffs'][key]:
                         scoreArray.append(value)
+                    scoreArray.append('\n')
                 player_writer.writerow(scoreArray)
+
+                player_writer.writerow([])
+                player_writer.writerow(['RandomRounds','RandomSelector'])
+                player_writer.writerow([Constants.randomRound,Constants.randomSelector])
+                print([])
+                print([])
 
         ## edit matrix Rows to display round #
         numberOfrounds = []
@@ -625,15 +632,24 @@ class Payoff(Page):
 
         sentNamesList = list(self.session.vars['sentNames'].keys())
         if self.player.id_in_group in selectorIDS:
-            total_payoff = self.participant.vars['total_payoffs'][self.player.id_in_group][Constants.randomRound -1]
-        else:
-            if self.player.participant.vars['nametag'] == sentNamesList[0]:
-                total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][0]
-            elif self.player.participant.vars['nametag'] == sentNamesList[-1]:
-                total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][Constants.rounds - 1]
+            cheaterLocation = len(self.participant.vars['total_payoffs'][self.player.id_in_group])
+            if cheaterLocation < 6:
+                total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][cheaterLocation]
             else:
-                location = sentNamesList.index(self.player.participant.vars['nametag'])
+                total_payoff = self.participant.vars['total_payoffs'][self.player.id_in_group][Constants.randomRound -1]
 
+
+        else:
+            if self.player.participant.vars['nametag'] == sentNamesList[0]: ## they are begining of the group else
+                total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][0]
+            elif self.player.participant.vars['nametag'] == sentNamesList[-1]: ## they are end of the group else
+                cheaterLocation = len(self.participant.vars['total_payoffs'][Constants.randomSelector])
+                if cheaterLocation < 6:
+                    total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][cheaterLocation]
+                else:
+                    total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][Constants.rounds - 1]
+            else: ## they are middle of the group else
+                location = sentNamesList.index(self.player.participant.vars['nametag'])
                 total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][location - Constants.randomLocationAdjust]
         return {
             'total_payoff': total_payoff,
