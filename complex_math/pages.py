@@ -168,7 +168,7 @@ class RoomATask(Page):
     ## before each page the is_displayed method is used to determine if the player can enter the page
     ## this game focuses a lot on round numbers so the is displayed is used to keep the player in the page that they are supposed to see
     def is_displayed(self):
-        return self.participant.vars['expiry_timestamp'] - time.time() > 3 and (self.round_number < (Constants.num_rounds - Constants.players)/2)
+        return self.participant.vars['expiry_timestamp'] - time.time() > 1 and (self.round_number < (Constants.num_rounds - Constants.players)/2)
 
     def vars_for_template(self):
 
@@ -282,7 +282,7 @@ class Task2instructions(Page):
 
         ##could have possibly broken everything by moving this down here.
         self.player.task_timer = Constants.task_timer2
-        self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer2
+        self.participant.vars['expiry_timestamp'] = time.time() + self.player.task_timer
 
 
 
@@ -300,7 +300,7 @@ class RoomATask2(Page):
         return self.participant.vars['expiry_timestamp'] - time.time()
 
     def is_displayed(self):
-        return self.participant.vars['expiry_timestamp'] - time.time() > 3 and (self.round_number >= (Constants.num_rounds - Constants.players)/2)
+        return self.participant.vars['expiry_timestamp'] - time.time() > 1 and (self.round_number >= (Constants.num_rounds - Constants.players)/2)
 
 
     def vars_for_template(self):
