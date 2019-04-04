@@ -9,12 +9,17 @@
 
 {% load otree_tags staticfiles %}
 
-<p class = "text-success">
-    </p>
 
- <h2 class="panel-sub-heading">
+<div class="instructions well well-lg">
 
-      <p>
+    <h2 class="panel-sub-heading">
+
+    </h2>
+
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'global/matrix.css' %}"/>
+
+   <p>
               The next part of the experiment is task B. The score that you receive in this task will count to towards your total payoff.
             </p>
             <p>
@@ -28,22 +33,18 @@
                   Your score will not decrease if you provide an incorrect answer.
             </p>
 
+    <br><br>
 
-    </h2>
-
-    <div class="panel panel-success">
-
-        <h4 class="panel-heading">
-
-            <h4/> Before preceding to Task B please select a nametag</h4>
-            <h4>In task A you scored {{ total_payoff  }}</h4>
+    <p>
+            In task A you scored {{ total_payoff  }
             <br><br>
-            <h4>Please select a name that will be used when your task A score is shared</h4>
+            <h4>Before preceding please select a name that will be used when your task A score is shared</h4>
+    </p>
 
-        </div>
-    </div>
-    </div>
 
+</div>
+
+    <br><br>
     {% formfield player.nametag %}
 
       {% next_button %}<br><br><br>

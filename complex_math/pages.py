@@ -541,17 +541,17 @@ class Payoff(Page):
         for j in range (Constants.selectors * Constants.players):
             if (j + 1) % Constants.players == 0:
                 differentSelectorName += 3
-                round = 0
+                round = 1
             else:
                 if j + 1 == RandomRoundAdjust:
 
 
-                    total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
+                    total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - round]
                     style = Constants.style1
                     RandomRoundAdjust += Constants.players
                 else:
 
-                    total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - 1 - round]
+                    total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - round]
                     style = Constants.styleNormal
 
 
@@ -597,7 +597,7 @@ class Payoff(Page):
 
 
         ## excel spreadsheet doesn't matter in HEROKU :(
-        # Constants.resultsBook.save('complex_math/Results/Results.xls')
+        Constants.resultsBook.save('complex_math/Results/Results.xls')
 
 
         ##write the output as csv for Heroku (cause its crappy and uses a crappy storage structure)
