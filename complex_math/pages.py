@@ -120,26 +120,26 @@ class Signin(Page):
 
 
         # fill workbook with player names and round rows -- make this to include all the data
-        def writeRounds(self,sheet,start):
-            interval = (Constants.selectors + (Constants.selectors*Constants.rounds))
-            end = start + interval
-            round = 1
-            selectorPrint = start + 1;
-            namePrint = start
-
-            while start <= end:
-                if start == namePrint:
-                    sheet.write(start,0,self.participant.vars['name'],Constants.style0)
-                elif start == selectorPrint:
-                    selectorPrint+= Constants.players
-                    round = 1
-                else:
-                    sheet.write(start,0,'       round '+str(round % selectorPrint))
-                    round += 1
-                start +=1
-
-        start = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group
-        writeRounds(self,Constants.resultsSheet,start)
+        # def writeRounds(self,sheet,start):
+        #     interval = (Constants.selectors + (Constants.selectors*Constants.rounds))
+        #     end = start + interval
+        #     round = 1
+        #     selectorPrint = start + 1;
+        #     namePrint = start
+        #
+        #     while start <= end:
+        #         if start == namePrint:
+        #             sheet.write(start,0,self.participant.vars['name'],Constants.style0)
+        #         elif start == selectorPrint:
+        #             selectorPrint+= Constants.players
+        #             round = 1
+        #         else:
+        #             sheet.write(start,0,'       round '+str(round % selectorPrint))
+        #             round += 1
+        #         start +=1
+        #
+        # start = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group
+        # writeRounds(self,Constants.resultsSheet,start)
 
 
 
@@ -265,21 +265,21 @@ class Task2instructions(Page):
             self.participant.vars['RoundsWithTeam'].columns = selectorNames
 
         ## add selector names to excel file
-        def writeSelectors(self, sheet, start):
-            interval = (Constants.selectors + (Constants.selectors * Constants.rounds))
-            end = start + interval
-            selectorPrint = start + 1;
-            selector = 0
-            while start <= end:
-                if start == selectorPrint:
-                    sheet.write(start,0,'   Selector ('+ selectorNames[selector] +')',Constants.style0)
-                    selectorPrint += Constants.players
-                    selector += 1
-                start += 1
-
-        start = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group
-
-        writeSelectors(self, Constants.resultsSheet, start)
+        # def writeSelectors(self, sheet, start):
+        #     interval = (Constants.selectors + (Constants.selectors * Constants.rounds))
+        #     end = start + interval
+        #     selectorPrint = start + 1;
+        #     selector = 0
+        #     while start <= end:
+        #         if start == selectorPrint:
+        #             sheet.write(start,0,'   Selector ('+ selectorNames[selector] +')',Constants.style0)
+        #             selectorPrint += Constants.players
+        #             selector += 1
+        #         start += 1
+        #
+        # start = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group
+        #
+        # writeSelectors(self, Constants.resultsSheet, start)
 
 
         ##could have possibly broken everything by moving this down here.
@@ -512,21 +512,6 @@ The payoff round is determined randomly at the start of the game
 
 class Payoff(Page):
     def is_displayed(self):
-        ## saves payoffs just incase
-        self.participant.vars['RoundsWithTeam'].to_csv('complex_math/Results/'+self.participant.vars['name']+'.csv')
-
-        ##writes player data to their csv file
-
-        if os.path('complex_math/Results/'+self.participant.vars['name']+'.csv'):
-
-            with open('complex_math/Results/'+self.participant.vars['name']+'.csv', mode='w') as player_csv:
-                player_writer = csv.writer(player_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-
-                player_writer.writerow([''])
-                player_writer.writerow([''])
-                player_writer.writerow([self.participant.vars['name'],self.partipant.vars['nametag'],self.participant.vars['task1_payoff'],self.participant.vars['task2_payoff']])
-                player_writer.writerow([str(self.participant.vars['total_payoffs'])])
-
         return self.round_number == (Constants.num_rounds)
 
     def vars_for_template(self):
@@ -534,6 +519,29 @@ class Payoff(Page):
         ## Get Selector Names for exel file
         selectorNames = list(self.session.vars['SelectorInformation'].values())
         selectorIDS = list(self.session.vars['SelectorInformation'].keys())
+
+        ## saves payoffs just incase
+        self.participant.vars['RoundsWithTeam'].to_csv('complex_math/Results/' + self.participant.vars['name'] + '.csv')
+
+        ##writes player data to their csv file
+        if os.path.isfile('complex_math/Results/' + self.participant.vars['name'] + '.csv'):
+
+            with open('complex_math/Results/' + self.participant.vars['name'] + '.csv', 'a') as player_csv:
+
+                player_writer = csv.writer(player_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+
+                player_writer.writerow([''])
+                player_writer.writerow([''])
+                player_writer.writerow(
+                    [self.player.id_in_group, self.participant.vars['name'], self.participant.vars['nametag'],
+                     self.participant.vars['task1_payoff'], self.participant.vars['task2_payoff']])
+
+                scoreArray = []
+                for key in self.participant.vars['total_payoffs']:
+                    scoreArray.append(selectorNames[int(key / 3) - 1])
+                    for value in self.participant.vars['total_payoffs'][key]:
+                        scoreArray.append(value)
+                player_writer.writerow(scoreArray)
 
         ## edit matrix Rows to display round #
         numberOfrounds = []
@@ -547,72 +555,64 @@ class Payoff(Page):
         # print(self.player.participant.vars['name'], '('+self.player.participant.vars['nametag']+')' ':', self.player.participant.vars['total_payoffs'])
 
         ## write player score and player variables
-        location = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group + 2
-        RandomRoundAdjust = Constants.randomRound
-        differentSelectorName = 3
-        round = 1
-
-
-        for j in range (Constants.selectors * Constants.players):
-            if (j + 1) % Constants.players == 0:
-                differentSelectorName += 3
-                round = 1
-            else:
-                if j + 1 == RandomRoundAdjust:
-
-
-                    total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - round]
-                    style = Constants.style1
-                    RandomRoundAdjust += Constants.players
-                else:
-
-                    total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - round]
-                    style = Constants.styleNormal
-
-
-
-                for i in range (0,len(Constants.participantVarList) -1):
-                    i+=1
-                    Constants.resultsSheet.write(location+j,i,self.participant.vars[Constants.participantVarList[i]],style)
-                Constants.resultsSheet.write(location+j,5,total_payoff,style)
-
-                round += 1
+        # location = (self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group + 2
+        # RandomRoundAdjust = Constants.randomRound
+        # differentSelectorName = 3
+        # round = 1
+        #
+        #
+        # for j in range (Constants.selectors * Constants.players):
+        #     if (j + 1) % Constants.players == 0:
+        #         differentSelectorName += 3
+        #         round = 1
+        #     else:
+        #         if j + 1 == RandomRoundAdjust:
+        #
+        #
+        #             total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - round]
+        #             style = Constants.style1
+        #             RandomRoundAdjust += Constants.players
+        #         else:
+        #
+        #             total_payoff = self.participant.vars['total_payoffs'][differentSelectorName][Constants.rounds - round]
+        #             style = Constants.styleNormal
+        #
+        #
+        #
+        #         for i in range (0,len(Constants.participantVarList) -1):
+        #             i+=1
+        #             Constants.resultsSheet.write(location+j,i,self.participant.vars[Constants.participantVarList[i]],style)
+        #         Constants.resultsSheet.write(location+j,5,total_payoff,style)
+        #
+        #         round += 1
 
         ## write team information
-        start = ((self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group) + 2
-        RandomRoundAdjust = Constants.randomRound
-        selectorName = 0
-        i = 0
+        # start = ((self.player.id_in_group - 1) * (Constants.players * Constants.selectors) + self.player.id_in_group) + 2
+        # RandomRoundAdjust = Constants.randomRound
+        # selectorName = 0
+        # i = 0
+        #
+        # ## write player 1/0 based on selection
+        #
+        # for j in range (Constants.selectors * Constants.players):
+        #     if (j + 1) % Constants.players == 0:
+        #         selectorName += 1
+        #         RandomRoundAdjust +=Constants.players
+        #         i = 0
+        #         continue
+        #     else:
+        #         if (j + 1) == RandomRoundAdjust:
+        #             style = Constants.style1
+        #         else:
+        #             style = Constants.styleNormal
+        #         Constants.resultsSheet.write(start+j,4,int(self.participant.vars['RoundsWithTeam'][selectorNames[selectorName]].values[i]),style)
+        #         i += 1
 
-        ## write player 1/0 based on selection
 
-        for j in range (Constants.selectors * Constants.players):
-            if (j + 1) % Constants.players == 0:
-                selectorName += 1
-                RandomRoundAdjust +=Constants.players
-                i = 0
-                continue
-            else:
-                if (j + 1) == RandomRoundAdjust:
-                    style = Constants.style1
-                else:
-                    style = Constants.styleNormal
-                Constants.resultsSheet.write(start+j,4,int(self.participant.vars['RoundsWithTeam'][selectorNames[selectorName]].values[i]),style)
-                i += 1
-
-
-        ## edit matrix Rows to display round #
-        numberOfrounds = []
-        for i in range(0, Constants.players - 1):
-            numberOfrounds.append('round ' + str(Constants.players - (i + 1)))
-
-        ## edit matrix to display selector Names
-
-        self.participant.vars['RoundsWithTeam'].index = numberOfrounds
 
 
         ## excel spreadsheet doesn't matter in HEROKU :(
-        Constants.resultsBook.save('complex_math/Results/Results.xls')
+        # Constants.resultsBook.save('complex_math/Results/Results.xls')
 
 
         ##write the output as csv for Heroku (cause its crappy and uses a crappy storage structure)
@@ -635,9 +635,6 @@ class Payoff(Page):
                 location = sentNamesList.index(self.player.participant.vars['nametag'])
 
                 total_payoff = self.participant.vars['total_payoffs'][Constants.randomSelector][location - Constants.randomLocationAdjust]
-            ## actually random. but for testing we will use the first selector and first round
-            # total_payoff = self.participant.vars['total_payoffs'][random.randint(1,Constants.selectors)*3][random.randint(0,Constants.rounds-1)]
-            # total_payoff = self.participant.vars['total_payoffs'][3][Constants.randomRound -1]
         return {
             'total_payoff': total_payoff,
             'name': self.participant.vars['name']

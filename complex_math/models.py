@@ -39,25 +39,25 @@ class Constants(BaseConstants):
     ##Excel Styles
 
     #Bold for headers
-    font0 = xlwt.Font()
-    font0.bold = True
-
-    style0 = xlwt.XFStyle()
-    style0.font = font0
-
-    #Highleighted for round that calculates payoff
-    font1 = xlwt.Font()
-    font1.colour_index = 2
-
-    style1 = xlwt.XFStyle()
-    style1.font = font1
-
-    ##Normal
-    fontNormal = xlwt.Font()
-    fontNormal.colour_index = 0
-
-    styleNormal = xlwt.XFStyle()
-    styleNormal.font = fontNormal
+    # font0 = xlwt.Font()
+    # font0.bold = True
+    #
+    # style0 = xlwt.XFStyle()
+    # style0.font = font0
+    #
+    # #Highleighted for round that calculates payoff
+    # font1 = xlwt.Font()
+    # font1.colour_index = 2
+    #
+    # style1 = xlwt.XFStyle()
+    # style1.font = font1
+    #
+    # ##Normal
+    # fontNormal = xlwt.Font()
+    # fontNormal.colour_index = 0
+    #
+    # styleNormal = xlwt.XFStyle()
+    # styleNormal.font = fontNormal
 
     ## 1/3 of the participants are selectors -- these are players in room B
     ## 2/3 of the participants are playors -- these are players in room A
@@ -66,13 +66,13 @@ class Constants(BaseConstants):
 
     rounds = players - 1
 
-    resultsBook = Workbook()
-    resultsSheet = resultsBook.add_sheet('Results Sheet')
+    #### DON'T NEED ANY WORKBOOK STUFF BECAUSE OF HEROKU
+    # resultsBook = Workbook()
+    # resultsSheet = resultsBook.add_sheet('Results Sheet')
 
     ##random numbers for payoffs
 
-    randomRound = random.randint(1,players)
-    randomRound = 7
+    randomRound = random.randint(1,rounds)
     randomSelector = random.randint(1,selectors)*3
     randomLocationAdjust = random.randint(0, 1)
 
